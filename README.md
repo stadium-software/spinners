@@ -56,7 +56,13 @@ initSpinners();
 7. Set the *Container's* *Visibility* property to "false" to hide the spinner
 8. Set the *Container's* *Visibility* property to "true" to show the spinner
 
+Setup:
+
 ![](images/Contained-Spinner.png)
+
+Result:
+
+![](images/Contained-Spinner-Result.png)
 
 ## Page.Load Setup
 1. Drag the Global Script called "Spinner" to the Page.Load event handler
