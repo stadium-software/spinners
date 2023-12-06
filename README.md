@@ -42,7 +42,7 @@ initSpinners();
 ## Page Setup: Full-Page Spinner
 1. Drag a *Container* control to a page 
 2. Add the class "stadium-custom-spinner" to the control's classes property
-3. Add the class "spinner-type-1" to the control's classes property (or any other number between 1 and 9)
+3. Add the class "spinner-type-1" to the control's classes property (or any other number from 1 and 9)
 4. Set the *Container's* *Visibility* property to "false" to hide the spinner
 5. Set the *Container's* *Visibility* property to "true" to show the spinner
 
@@ -52,7 +52,7 @@ initSpinners();
 3. Drag another *Container* control into the first *Container* control (I will call this one "SpinnerContainer")
 4. Add the class "stadium-custom-spinner" to the SpinnerContainer's classes property
 5. Add the class "spinner-contained" to the SpinnerContainer's classes property
-6. Add the class "spinner-type-1" to the SpinnerContainer's classes property (or any other number between 1 and 9)
+6. Add the class "spinner-type-1" to the SpinnerContainer's classes property (or any other number from 1 and 9)
 7. Set the *Container's* *Visibility* property to "false" to hide the spinner
 8. Set the *Container's* *Visibility* property to "true" to show the spinner
 
