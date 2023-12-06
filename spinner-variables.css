@@ -1,0 +1,8 @@
+:root {
+    /*---Spinners---*/
+    --stadium-spinner-color1: #ffffff;
+    --stadium-spinner-color2: #1976d2;
+    --stadium-spinner-background-color: rgba(0, 0, 0, 0.5);
+    --stadium-spinner-width: 48px;
+    --stadium-spinner-height: 48px;
+}

@@ -1,0 +1,380 @@
+/*---Spinners---*/
+.control-container:has(.stadium-spinner.spinner-contained),
+.layout-control:has(.stadium-spinner.spinner-contained) {
+    position: relative;
+}
+
+.stadium-spinner.spinner-contained {
+    margin-right: 16px;
+    margin-top: 10px;
+}
+
+.control-container:is(.stadium-spinner),
+.layout-control:is(.stadium-spinner) {
+    display: grid;
+    place-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--stadium-spinner-background-color);
+    overflow: hidden;
+    z-index: 10000000;
+
+    & .spinner-type-1 {
+        width: var(--stadium-spinner-width);
+        height: var(--stadium-spinner-height);
+        border: 5px solid var(--stadium-spinner-color1);
+        border-bottom-color: var(--stadium-spinner-color2);
+        border-radius: 50%;
+        display: inline-block;
+        box-sizing: border-box;
+        animation: rotation 1s linear infinite;
+    }
+
+    & .spinner-type-2 {
+        width: var(--stadium-spinner-width);
+        height: var(--stadium-spinner-height);
+        border: 5px solid var(--stadium-spinner-color1);
+        border-bottom-color: transparent;
+        border-radius: 50%;
+        display: inline-block;
+        box-sizing: border-box;
+        animation: rotation 1s linear infinite;
+    }
+
+    /*------------------------------------------------------------------*/
+    & .spinner-type-3 {
+        transform: rotateZ(45deg);
+        perspective: 1000px;
+        border-radius: 50%;
+        width: var(--stadium-spinner-width);
+        height: var(--stadium-spinner-height);
+        color: var(--stadium-spinner-color1);
+    }
+
+    & .spinner-type-3:before,
+    & .spinner-type-3:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: inherit;
+        height: inherit;
+        border-radius: 50%;
+        transform: rotateX(70deg);
+        animation: 1s spin linear infinite;
+    }
+
+    & .spinner-type-3:after {
+        color: var(--stadium-spinner-color2);
+        transform: rotateY(70deg);
+        animation-delay: .4s;
+    }
+
+    /*------------------------------------------------------------------*/
+    & .spinner-type-4 {
+        width: var(--stadium-spinner-width);
+        height: var(--stadium-spinner-height);
+        border: 10px solid var(--stadium-spinner-color1);
+        border-radius: 50%;
+        position: relative;
+        transform: rotate(45deg);
+        box-sizing: border-box;
+    }
+
+    & .spinner-type-4::before {
+        content: "";
+        position: absolute;
+        box-sizing: border-box;
+        inset: -10px;
+        border-radius: 50%;
+        border: 10px solid var(--stadium-spinner-color2);
+        animation: prixClipFix 2s infinite linear;
+    }
+
+    /*------------------------------------------------------------------*/
+    & .spinner-type-5 {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        display: block;
+        margin: 15px auto;
+        position: relative;
+        color: var(--stadium-spinner-color1);
+        left: -100px;
+        box-sizing: border-box;
+        animation: shadowRolling 2s linear infinite;
+    }
+
+    /*------------------------------------------------------------------*/
+    & .spinner-type-6 {
+        width: var(--stadium-spinner-width);
+        height: var(--stadium-spinner-height);
+        border: 3px solid var(--stadium-spinner-color1);
+        border-radius: 50%;
+        display: inline-block;
+        position: relative;
+        box-sizing: border-box;
+        animation: rotation 1s linear infinite;
+    }
+
+    & .spinner-type-6::after {
+        content: '';
+        box-sizing: border-box;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: var(--stadium-spinner-color2);
+        width: 16px;
+        height: 16px;
+        transform: translate(-50%, 50%);
+        border-radius: 50%;
+    }
+
+    /*------------------------------------------------------------------*/
+    & .spinner-type-7 {
+        width: var(--stadium-spinner-width);
+        height: var(--stadium-spinner-height);
+        border-radius: 50%;
+        display: inline-block;
+        position: relative;
+        border: 3px solid;
+        border-color: var(--stadium-spinner-color1) var(--stadium-spinner-color1) transparent transparent;
+        box-sizing: border-box;
+        animation: rotation 1s linear infinite;
+    }
+
+    & .spinner-type-7::after,
+    & .spinner-type-7::before {
+        content: '';
+        box-sizing: border-box;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        border: 3px solid;
+        border-color: transparent transparent var(--stadium-spinner-color2) var(--stadium-spinner-color2);
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        box-sizing: border-box;
+        animation: rotationBack 0.5s linear infinite;
+        transform-origin: center center;
+    }
+
+    & .spinner-type-7::before {
+        width: 32px;
+        height: 32px;
+        border-color: var(--stadium-spinner-color1) var(--stadium-spinner-color1) transparent transparent;
+        animation: rotation 1.5s linear infinite;
+    }
+
+    /*------------------------------------------------------------------*/
+    & .spinner-type-8 {
+        width: var(--stadium-spinner-width);
+        height: var(--stadium-spinner-height);
+        border: 3px dotted var(--stadium-spinner-color1);
+        border-style: solid solid dotted dotted;
+        border-radius: 50%;
+        display: inline-block;
+        position: relative;
+        box-sizing: border-box;
+        animation: rotation 2s linear infinite;
+    }
+
+    & .spinner-type-8::after {
+        content: '';
+        box-sizing: border-box;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        border: 3px dotted var(--stadium-spinner-color2);
+        border-style: solid solid dotted;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        animation: rotationBack 1s linear infinite;
+        transform-origin: center center;
+    }
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: translate(-50%, -50%) rotateZ(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotateZ(360deg);
+    }
+}
+
+@keyframes rotateccw {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(-360deg);
+    }
+}
+
+@keyframes spin {
+
+    0%,
+    100% {
+        box-shadow: .2em 0px 0 0px currentcolor;
+    }
+
+    12% {
+        box-shadow: .2em .2em 0 0 currentcolor;
+    }
+
+    25% {
+        box-shadow: 0 .2em 0 0px currentcolor;
+    }
+
+    37% {
+        box-shadow: -.2em .2em 0 0 currentcolor;
+    }
+
+    50% {
+        box-shadow: -.2em 0 0 0 currentcolor;
+    }
+
+    62% {
+        box-shadow: -.2em -.2em 0 0 currentcolor;
+    }
+
+    75% {
+        box-shadow: 0px -.2em 0 0 currentcolor;
+    }
+
+    87% {
+        box-shadow: .2em -.2em 0 0 currentcolor;
+    }
+}
+
+@keyframes prixClipFix {
+    0% {
+        clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0)
+    }
+
+    12.5% {
+        clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 0, 100% 0, 100% 0)
+    }
+
+    25% {
+        clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%)
+    }
+
+    37.5% {
+        clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%)
+    }
+
+    50% {
+        clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 0)
+    }
+
+    62.5% {
+        clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%)
+    }
+
+    75% {
+        clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%)
+    }
+
+    87.5% {
+        clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 0, 100% 0, 100% 0)
+    }
+
+    100% {
+        clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0)
+    }
+}
+
+@keyframes shadowRolling {
+    0% {
+        box-shadow: 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0);
+    }
+
+    12% {
+        box-shadow: 100px 0 white, 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0);
+    }
+
+    25% {
+        box-shadow: 110px 0 white, 100px 0 white, 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0);
+    }
+
+    36% {
+        box-shadow: 120px 0 white, 110px 0 white, 100px 0 white, 0px 0 rgba(255, 255, 255, 0);
+    }
+
+    50% {
+        box-shadow: 130px 0 white, 120px 0 white, 110px 0 white, 100px 0 white;
+    }
+
+    62% {
+        box-shadow: 200px 0 rgba(255, 255, 255, 0), 130px 0 white, 120px 0 white, 110px 0 white;
+    }
+
+    75% {
+        box-shadow: 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 130px 0 white, 120px 0 white;
+    }
+
+    87% {
+        box-shadow: 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 130px 0 white;
+    }
+
+    100% {
+        box-shadow: 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0);
+    }
+}
+
+@keyframes rotationBack {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+/*DEMO CSS only*/
+.heading {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.description {
+    max-width: 600px;
+    text-wrap: balance;
+}
+
+.subheading {
+    width: 600px;
+    font-weight: bold;
+    border-bottom: 1px solid #ccc;
+}
+
+.menu-container {
+    box-shadow: none;
+}
