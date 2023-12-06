@@ -62,7 +62,7 @@ Setup:
 
 Result:
 
-![](images/Contained-Spinner-Result.png)
+![](images/Contained-Spinner-Result.gif)
 
 ## Page.Load Setup
 1. Drag the Global Script called "Spinner" to the Page.Load event handler
