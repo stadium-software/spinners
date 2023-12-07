@@ -32,6 +32,8 @@ let initSpinners = () => {
             spinners[i].classList.remove(className);
             let spinner = document.createElement("div");
             spinner.classList.add(className);
+            if (spinners[i].innerHTML != "") console.warn("Spinners must not contain controls");
+            spinners[i].innerHTML = "";
             spinners[i].appendChild(spinner);
         }
     }
