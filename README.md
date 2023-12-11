@@ -7,6 +7,7 @@ https://github.com/stadium-software/spinners/assets/2085324/e71eb0bb-21c6-4962-b
 ## Version 
 
 1.0 Initial
+1.1 Added more spinners (script and CSS)
 
 # Setup
 
@@ -18,15 +19,16 @@ https://github.com/stadium-software/spinners/assets/2085324/e71eb0bb-21c6-4962-b
 3. Drag a *JavaScript* action into the script
 4. Add the Javascript below into the JavaScript code property
 ```javascript
-/* Stadium Script Version 1.0 */
+/* Stadium Script Version 1.1 */
 let initSpinners = () => {
     let spinners = document.querySelectorAll(".stadium-spinner");
+    let spinnerCount = 20;
     for (let i = 0; i < spinners.length; i++) {
         let arrClasses = spinners[i].getAttribute("class").split(" ");
         let className = arrClasses.find((cl) => cl.startsWith("spinner-type-"));
         if (className) {
             if (className == "spinner-type-random") {
-                let randomClass = Math.floor(Math.random() * (9 - 1)) + 1;
+                let randomClass = Math.floor(Math.random() * spinnerCount) + 1;
                 className = "spinner-type-" + randomClass;
             }
             spinners[i].classList.remove(className);
