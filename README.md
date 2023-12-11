@@ -7,6 +7,7 @@ https://github.com/stadium-software/spinners/assets/2085324/e71eb0bb-21c6-4962-b
 ## Version 
 
 1.0 Initial
+
 1.1 Added more spinners (script and CSS)
 
 # Setup
