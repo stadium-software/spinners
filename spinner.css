@@ -4,7 +4,10 @@
     position: relative;
 }
 
-.stadium-spinner.spinner-contained {
+.control-container:is(.stadium-spinner.spinner-contained),
+.layout-control:is(.stadium-spinner.spinner-contained) {
+    position: absolute;
+    max-height: 100%;
     margin-right: 16px;
     margin-top: 10px;
 }
