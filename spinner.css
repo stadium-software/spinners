@@ -13,7 +13,7 @@
 .layout-control:is(.stadium-spinner) {
     display: grid;
     place-items: center;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -21,6 +21,7 @@
     background-color: var(--stadium-spinner-background-color);
     overflow: hidden;
     z-index: 10000000;
+    max-height: 100vh;
 
     & .spinner-type-1 {
         width: var(--stadium-spinner-width);
