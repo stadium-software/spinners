@@ -8,8 +8,8 @@
 .layout-control:is(.stadium-spinner.spinner-contained) {
     position: absolute;
     max-height: 100%;
-    margin-right: 16px;
-    margin-top: 10px;
+    margin-right: var(--stadium-spinner-contained-right-margin, 16px);
+    margin-top: var(--stadium-spinner-contained-top-margin, 10px);
 }
 
 .control-container:is(.stadium-spinner),

@@ -6,4 +6,6 @@
     --stadium-spinner-background-color: rgba(0, 0, 0, 0.5);
     --stadium-spinner-width: 48px;
     --stadium-spinner-height: 48px;
+    --stadium-spinner-contained-right-margin: 16px;
+    --stadium-spinner-contained-top-margin: 10px;
 }
