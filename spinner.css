@@ -1,4 +1,4 @@
-/*---Spinners---*/
+/* CSS Version 1.1 https://github.com/stadium-software/spinners */
 .control-container:has(.stadium-spinner.spinner-contained),
 .layout-control:has(.stadium-spinner.spinner-contained) {
     position: relative;

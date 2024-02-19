@@ -20,7 +20,7 @@ https://github.com/stadium-software/spinners/assets/2085324/e71eb0bb-21c6-4962-b
 3. Drag a *JavaScript* action into the script
 4. Add the Javascript below into the JavaScript code property
 ```javascript
-/* Stadium Script Version 1.1 */
+/* Stadium Script Version 1.1 https://github.com/stadium-software/spinners */
 let initSpinners = () => {
     let spinners = document.querySelectorAll(".stadium-spinner");
     let spinnerCount = 20;
