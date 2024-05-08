@@ -23,7 +23,7 @@
     bottom: 0;
     background-color: var(--stadium-spinner-background-color);
     overflow: hidden;
-    z-index: 10000000;
+    z-index: 9000;
     max-height: 100vh;
 
     & .spinner-type-1 {
