@@ -146,7 +146,7 @@
         display: inline-block;
         position: relative;
         border: 3px solid;
-        border-color: var(--stadium-spinner-color1) var(--stadium-spinner-color1) transparent transparent;
+        border-color: var(--stadium-spinner-color2) var(--stadium-spinner-color2) transparent transparent;
         box-sizing: border-box;
         animation: rotation 1s linear infinite;
     }
