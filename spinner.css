@@ -8,6 +8,7 @@
 .layout-control:is(.stadium-spinner.spinner-contained) {
     position: absolute;
     max-height: 100%;
+    max-width: 100%;
     margin-right: var(--stadium-spinner-contained-right-margin, 16px);
     margin-top: var(--stadium-spinner-contained-top-margin, 10px);
 }
@@ -21,26 +22,26 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: var(--stadium-spinner-background-color);
+    background-color: var(--stadium-spinner-background-color, var(--MODAL-OVERLAY-COLOR));
     overflow: hidden;
     z-index: 9000;
     max-height: 100vh;
 
-    & .spinner-type-1 {
-        width: var(--stadium-spinner-width);
-        height: var(--stadium-spinner-height);
-        border: 5px solid var(--stadium-spinner-color1);
-        border-bottom-color: var(--stadium-spinner-color3);
+    .spinner-type-1 {
+        width: var(--stadium-spinner-width, 48px);
+        height: var(--stadium-spinner-height, 48px);
+        border: 5px solid var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR));
+        border-bottom-color: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
         border-radius: 50%;
         display: inline-block;
         box-sizing: border-box;
         animation: rotation 1s linear infinite;
     }
 
-    & .spinner-type-2 {
-        width: var(--stadium-spinner-width);
-        height: var(--stadium-spinner-height);
-        border: 5px solid var(--stadium-spinner-color3);
+    .spinner-type-2 {
+        width: var(--stadium-spinner-width, 48px);
+        height: var(--stadium-spinner-height, 48px);
+        border: 5px solid var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
         border-bottom-color: transparent;
         border-radius: 50%;
         display: inline-block;
@@ -49,17 +50,17 @@
     }
 
     /*------------------------------------------------------------------*/
-    & .spinner-type-3 {
+    .spinner-type-3 {
         transform: rotateZ(45deg);
         perspective: 1000px;
         border-radius: 50%;
-        width: var(--stadium-spinner-width);
-        height: var(--stadium-spinner-height);
-        color: var(--stadium-spinner-color3);
+        width: var(--stadium-spinner-width, 48px);
+        height: var(--stadium-spinner-height, 48px);
+        color: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
     }
 
-    & .spinner-type-3:before,
-    & .spinner-type-3:after {
+    .spinner-type-3:before,
+    .spinner-type-3:after {
         content: '';
         display: block;
         position: absolute;
@@ -72,52 +73,52 @@
         animation: 1s spin linear infinite;
     }
 
-    & .spinner-type-3:after {
-        color: var(--stadium-spinner-color1);
+    .spinner-type-3:after {
+        color: var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR));
         transform: rotateY(70deg);
         animation-delay: .4s;
     }
 
     /*------------------------------------------------------------------*/
-    & .spinner-type-4 {
-        width: var(--stadium-spinner-width);
-        height: var(--stadium-spinner-height);
-        border: 10px solid var(--stadium-spinner-color1);
+    .spinner-type-4 {
+        width: var(--stadium-spinner-width, 48px);
+        height: var(--stadium-spinner-height, 48px);
+        border: 10px solid var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR));
         border-radius: 50%;
         position: relative;
         transform: rotate(45deg);
         box-sizing: border-box;
     }
 
-    & .spinner-type-4::before {
+    .spinner-type-4::before {
         content: "";
         position: absolute;
         box-sizing: border-box;
         inset: -10px;
         border-radius: 50%;
-        border: 10px solid var(--stadium-spinner-color3);
+        border: 10px solid var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
         animation: prixClipFix 2s infinite linear;
     }
 
     /*------------------------------------------------------------------*/
-    & .spinner-type-5 {
+    .spinner-type-5 {
         width: 10px;
         height: 10px;
         border-radius: 50%;
         display: block;
         margin: 15px auto;
         position: relative;
-        color: var(--stadium-spinner-color1);
+        color: var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR));
         left: -100px;
         box-sizing: border-box;
         animation: shadowRolling 2s linear infinite;
     }
 
     /*------------------------------------------------------------------*/
-    & .spinner-type-6 {
-        width: var(--stadium-spinner-width);
-        height: var(--stadium-spinner-height);
-        border: 3px solid var(--stadium-spinner-color1);
+    .spinner-type-6 {
+        width: var(--stadium-spinner-width, 48px);
+        height: var(--stadium-spinner-height, 48px);
+        border: 3px solid var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR));
         border-radius: 50%;
         display: inline-block;
         position: relative;
@@ -125,13 +126,13 @@
         animation: rotation 1s linear infinite;
     }
 
-    & .spinner-type-6::after {
+    .spinner-type-6::after {
         content: '';
         box-sizing: border-box;
         position: absolute;
         left: 0;
         top: 0;
-        background: var(--stadium-spinner-color3);
+        background: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
         width: 16px;
         height: 16px;
         transform: translate(-50%, 50%);
@@ -139,20 +140,20 @@
     }
 
     /*------------------------------------------------------------------*/
-    & .spinner-type-7 {
-        width: var(--stadium-spinner-width);
-        height: var(--stadium-spinner-height);
+    .spinner-type-7 {
+        width: var(--stadium-spinner-width, 48px);
+        height: var(--stadium-spinner-height, 48px);
         border-radius: 50%;
         display: inline-block;
         position: relative;
         border: 3px solid;
-        border-color: var(--stadium-spinner-color2) var(--stadium-spinner-color2) transparent transparent;
+        border-color: var(--stadium-spinner-color2, var(--SECONDARY-THEME-COLOR)) var(--stadium-spinner-color2, var(--SECONDARY-THEME-COLOR)) transparent transparent;
         box-sizing: border-box;
         animation: rotation 1s linear infinite;
     }
 
-    & .spinner-type-7::after,
-    & .spinner-type-7::before {
+    .spinner-type-7::after,
+    .spinner-type-7::before {
         content: '';
         box-sizing: border-box;
         position: absolute;
@@ -162,7 +163,7 @@
         bottom: 0;
         margin: auto;
         border: 3px solid;
-        border-color: transparent transparent var(--stadium-spinner-color3) var(--stadium-spinner-color3);
+        border-color: transparent transparent var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)) var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
         width: 40px;
         height: 40px;
         border-radius: 50%;
@@ -171,18 +172,18 @@
         transform-origin: center center;
     }
 
-    & .spinner-type-7::before {
+    .spinner-type-7::before {
         width: 32px;
         height: 32px;
-        border-color: var(--stadium-spinner-color1) var(--stadium-spinner-color1) transparent transparent;
+        border-color: var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR)) var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR)) transparent transparent;
         animation: rotation 1.5s linear infinite;
     }
 
     /*------------------------------------------------------------------*/
-    & .spinner-type-8 {
-        width: var(--stadium-spinner-width);
-        height: var(--stadium-spinner-height);
-        border: 3px dotted var(--stadium-spinner-color1);
+    .spinner-type-8 {
+        width: var(--stadium-spinner-width, 48px);
+        height: var(--stadium-spinner-height, 48px);
+        border: 3px dotted var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR));
         border-style: solid solid dotted dotted;
         border-radius: 50%;
         display: inline-block;
@@ -191,7 +192,7 @@
         animation: rotation 2s linear infinite;
     }
 
-    & .spinner-type-8::after {
+    .spinner-type-8::after {
         content: '';
         box-sizing: border-box;
         position: absolute;
@@ -200,7 +201,7 @@
         top: 0;
         bottom: 0;
         margin: auto;
-        border: 3px dotted var(--stadium-spinner-color3);
+        border: 3px dotted var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
         border-style: solid solid dotted;
         width: 24px;
         height: 24px;
@@ -213,7 +214,7 @@
         width: 28px;
         aspect-ratio: 1;
         border-radius: 50%;
-        background: var(--stadium-spinner-color1);
+        background: var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR));
         transform-origin: top;
         display: grid;
         animation: l3-0 1s infinite linear;
@@ -223,7 +224,7 @@
     .spinner-type-9::after {
         content: "";
         grid-area: 1/1;
-        background: var(--stadium-spinner-color2);
+        background: var(--stadium-spinner-color2, var(--SECONDARY-THEME-COLOR));
         border-radius: 50%;
         transform-origin: top;
         animation: inherit;
@@ -231,7 +232,7 @@
     }
 
     .spinner-type-9::after {
-        background: var(--stadium-spinner-color3);
+        background: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
         --s: 180deg;
     }
     /*----------------------------------------------------------------*/
@@ -239,7 +240,7 @@
         width: 28px;
         aspect-ratio: 1;
         border-radius: 50%;
-        background: var(--stadium-spinner-color1);
+        background: var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR));
         animation: l2 1.5s infinite;
     }
     /*------------------------------------------------------------------*/
@@ -248,8 +249,8 @@
         aspect-ratio: 1;
         border-radius: 50%;
         background: 
-            radial-gradient(farthest-side,var(--stadium-spinner-color1) 95%,transparent) 50% 1px/12px 12px no-repeat,
-            radial-gradient(farthest-side,transparent calc(100% - 14px),var(--stadium-spinner-color3) 0);
+            radial-gradient(farthest-side,var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR)) 95%,transparent) 50% 1px/12px 12px no-repeat,
+            radial-gradient(farthest-side,transparent calc(100% - 14px),var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)) 0);
         animation: l9 2s infinite linear;
     }
     /*------------------------------------------------------------------*/
@@ -257,7 +258,7 @@
         width: 40px;
         height: 40px;
         position: relative;
-        --c: no-repeat linear-gradient(var(--stadium-spinner-color1) 0 0);
+        --c: no-repeat linear-gradient(var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR)) 0 0);
         background:
             var(--c) center/100% 10px,
             var(--c) center/10px 100%;
@@ -281,8 +282,8 @@
         height: 50px;
         border-radius: 50px;
         background: 
-        radial-gradient(farthest-side,transparent calc(100% - 15px),var(--stadium-spinner-color1) calc(100% - 14px) 99%,transparent) left,
-        radial-gradient(farthest-side,transparent calc(100% - 15px),var(--stadium-spinner-color1) calc(100% - 14px) 99%,transparent) right;
+        radial-gradient(farthest-side,transparent calc(100% - 15px),var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR)) calc(100% - 14px) 99%,transparent) left,
+        radial-gradient(farthest-side,transparent calc(100% - 15px),var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR)) calc(100% - 14px) 99%,transparent) right;
         background-size: calc(50% + 7px) 100%;
         background-repeat: no-repeat;
         position: relative;
@@ -296,7 +297,7 @@
         width: 10px;
         height: 10px;
         border-radius: 50%;
-        background: var(--stadium-spinner-color3);
+        background: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
         transform-origin: -14px 50%;
         animation: l10-1 0.5s infinite linear;
     }
@@ -305,9 +306,9 @@
         width: 80px;
         aspect-ratio: 1;
         background: 
-            radial-gradient(farthest-side at top,transparent calc(100% - 21px),var(--stadium-spinner-color1) calc(100% - 20px) 99%,transparent) bottom/100% 50%,
-            radial-gradient(farthest-side,var(--stadium-spinner-color1) 94%,transparent ) left /20px 20px,
-            radial-gradient(farthest-side,var(--stadium-spinner-color1) 94%,transparent ) right/20px 20px;
+            radial-gradient(farthest-side at top,transparent calc(100% - 21px),var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR)) calc(100% - 20px) 99%,transparent) bottom/100% 50%,
+            radial-gradient(farthest-side,var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR)) 94%,transparent ) left /20px 20px,
+            radial-gradient(farthest-side,var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR)) 94%,transparent ) right/20px 20px;
         background-repeat: no-repeat;
         position: relative;
     }
@@ -319,7 +320,7 @@
         inset: auto 0 0;
         margin: auto;
         border-radius: 50%;
-        background: var(--stadium-spinner-color3);
+        background: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
         transform-origin: 50% -20px;
         animation: l14 1s infinite cubic-bezier(0.5,623,0.5,-623);
     }
@@ -328,7 +329,7 @@
         width: 60px;
         height: 60px;
         display: flex;
-        color: var(--stadium-spinner-color1);
+        color: var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR));
         --c: transparent calc(100% - 20px), currentColor calc(100% - 19px) 98%, transparent;
         background:
             radial-gradient(farthest-side at left, var(--c)) right /50% 100%,
@@ -348,7 +349,7 @@
         width: 50px;
         height: 50px;
         display: flex;
-        color: var(--stadium-spinner-color3);
+        color: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
         background:
             linear-gradient(currentColor 0 0) right /51% 100%,
             linear-gradient(currentColor 0 0) bottom /100% 51%;
@@ -367,10 +368,10 @@
     .spinner-type-17 {
         width: 120px;
         height: 20px;
-        -webkit-mask: linear-gradient(90deg,var(--stadium-spinner-color1) 70%,transparent 0) left/20% 100%;
+        -webkit-mask: linear-gradient(90deg,var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR)) 70%,transparent 0) left/20% 100%;
         background:
-        linear-gradient(var(--stadium-spinner-color1) 0 0) left -25% top 0 /20% 100% no-repeat
-        var(--stadium-spinner-color3);
+        linear-gradient(var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR)) 0 0) left -25% top 0 /20% 100% no-repeat
+        var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
         animation: l7 1s infinite steps(6);
     }
     /*------------------------------------------------------------------*/
@@ -378,17 +379,17 @@
         width: 120px;
         height: 60px;
         border-radius: 200px 200px 0 0;
-        -webkit-mask: repeating-radial-gradient(farthest-side at bottom ,var(--stadium-spinner-color1) 0,var(--stadium-spinner-color2) 1px 12%,transparent calc(12% + 1px) 20%);
+        -webkit-mask: repeating-radial-gradient(farthest-side at bottom ,var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR)) 0,var(--stadium-spinner-color2, var(--SECONDARY-THEME-COLOR)) 1px 12%,transparent calc(12% + 1px) 20%);
         background:
-        radial-gradient(farthest-side at bottom,var(--stadium-spinner-color1) 0 95%,transparent 0) bottom/0% 0% no-repeat
-        var(--stadium-spinner-color3);
+        radial-gradient(farthest-side at bottom,var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR)) 0 95%,transparent 0) bottom/0% 0% no-repeat
+        var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
         animation: l10 2s infinite steps(6);
     }
     /*------------------------------------------------------------------*/
     .spinner-type-19 {
         width: 90px;
         height: 14px;
-        box-shadow: 0 3px 0 var(--stadium-spinner-color3);
+        box-shadow: 0 3px 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
         position: relative;
         display: grid;
         clip-path: inset(-60px 0 -5px)
@@ -396,7 +397,7 @@
     .spinner-type-19:after {
         content: "";
         position: relative;
-        background: repeating-linear-gradient(90deg,transparent 0 calc(50% - 8px), var(--stadium-spinner-color1) 0 calc(50% + 8px), transparent 0 100%) 0 0/calc(100%/3) 100%;
+        background: repeating-linear-gradient(90deg,transparent 0 calc(50% - 8px), var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR)) 0 calc(50% + 8px), transparent 0 100%) 0 0/calc(100%/3) 100%;
         animation: l6-1 1s infinite;
     } 
     .spinner-type-19:before {
@@ -407,14 +408,14 @@
         left: calc(50% - 7px);
         bottom: 0;
         border-radius: 50%;
-        background: var(--stadium-spinner-color2);
+        background: var(--stadium-spinner-color2, var(--SECONDARY-THEME-COLOR));
         animation: l6-2 1s infinite;
     }
     /*------------------------------------------------------------------*/
     .spinner-type-20 {
         width: 60px;
         aspect-ratio: 4;
-        background: radial-gradient(closest-side at calc(100%/6) 50%,var(--stadium-spinner-color3) 90%,transparent) 0/75% 100%;
+        background: radial-gradient(closest-side at calc(100%/6) 50%,var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)) 90%,transparent) 0/75% 100%;
         position: relative;
         animation: l15-0 1s infinite linear;
     }
@@ -592,22 +593,22 @@
     0%,
     100% {
         transform: translate(-35px);
-        box-shadow: 0 0 var(--stadium-spinner-color2), 0 0 var(--stadium-spinner-color3)
+        box-shadow: 0 0 var(--stadium-spinner-color2, var(--SECONDARY-THEME-COLOR)), 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR))
     }
 
     40% {
         transform: translate(35px);
-        box-shadow: -15px 0 var(--stadium-spinner-color2), -30px 0 var(--stadium-spinner-color3)
+        box-shadow: -15px 0 var(--stadium-spinner-color2, var(--SECONDARY-THEME-COLOR)), -30px 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR))
     }
 
     50% {
         transform: translate(35px);
-        box-shadow: 0 0 var(--stadium-spinner-color2), 0 0 var(--stadium-spinner-color3)
+        box-shadow: 0 0 var(--stadium-spinner-color2, var(--SECONDARY-THEME-COLOR)), 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR))
     }
 
     90% {
         transform: translate(-35px);
-        box-shadow: 15px 0 var(--stadium-spinner-color2), 30px 0 var(--stadium-spinner-color3)
+        box-shadow: 15px 0 var(--stadium-spinner-color2, var(--SECONDARY-THEME-COLOR)), 30px 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR))
     }
 }
 @keyframes l3-0 {
@@ -742,31 +743,31 @@
     }
 
     12% {
-        box-shadow: 100px 0 var(--stadium-spinner-color3), 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0);
+        box-shadow: 100px 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0);
     }
 
     25% {
-        box-shadow: 110px 0 var(--stadium-spinner-color3), 100px 0 var(--stadium-spinner-color3), 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0);
+        box-shadow: 110px 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 100px 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0);
     }
 
     36% {
-        box-shadow: 120px 0 var(--stadium-spinner-color3), 110px 0 var(--stadium-spinner-color3), 100px 0 var(--stadium-spinner-color3), 0px 0 rgba(255, 255, 255, 0);
+        box-shadow: 120px 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 110px 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 100px 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 0px 0 rgba(255, 255, 255, 0);
     }
 
     50% {
-        box-shadow: 130px 0 var(--stadium-spinner-color3), 120px 0 var(--stadium-spinner-color3), 110px 0 var(--stadium-spinner-color3), 100px 0 var(--stadium-spinner-color3);
+        box-shadow: 130px 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 120px 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 110px 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 100px 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
     }
 
     62% {
-        box-shadow: 200px 0 rgba(255, 255, 255, 0), 130px 0 var(--stadium-spinner-color3), 120px 0 var(--stadium-spinner-color3), 110px 0 var(--stadium-spinner-color3);
+        box-shadow: 200px 0 rgba(255, 255, 255, 0), 130px 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 120px 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 110px 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
     }
 
     75% {
-        box-shadow: 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 130px 0 var(--stadium-spinner-color3), 120px 0 var(--stadium-spinner-color3);
+        box-shadow: 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 130px 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 120px 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
     }
 
     87% {
-        box-shadow: 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 130px 0 var(--stadium-spinner-color3);
+        box-shadow: 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 130px 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
     }
 
     100% {
