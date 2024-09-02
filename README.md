@@ -10,6 +10,8 @@ https://github.com/stadium-software/spinners/assets/2085324/e71eb0bb-21c6-4962-b
 
 1.1 Added more spinners (script and CSS)
 
+1.1.1 Added even more spinners (script and CSS)
+
 # Setup
 
 ## Application Setup
@@ -20,10 +22,10 @@ https://github.com/stadium-software/spinners/assets/2085324/e71eb0bb-21c6-4962-b
 3. Drag a *JavaScript* action into the script
 4. Add the Javascript below into the JavaScript code property
 ```javascript
-/* Stadium Script Version 1.1 https://github.com/stadium-software/spinners */
+/* Stadium Script Version 1.1.1 */
 let initSpinners = () => {
     let spinners = document.querySelectorAll(".stadium-spinner");
-    let spinnerCount = 20;
+    let spinnerCount = 83;
     for (let i = 0; i < spinners.length; i++) {
         let arrClasses = spinners[i].getAttribute("class").split(" ");
         let className = arrClasses.find((cl) => cl.startsWith("spinner-type-"));
@@ -47,9 +49,9 @@ initSpinners();
 ## Page Setup: Full-Page Spinner
 1. Drag a *Container* control to a page 
 2. Add the class "stadium-spinner" to the control's classes property
-3. Add the class "spinner-type-1" to the control's classes property (or any other number from 1 to 9)
-4. Set the *Container's* *Visibility* property to "false" to hide the spinner
-5. Set the *Container's* *Visibility* property to "true" to show the spinner
+3. Add the class "spinner-type-1" to the control's classes property (or any other number from 1 to 83, e.g. spinner-type-71)
+4. Set the *Container* *Visibility* property to "false" to hide the spinner
+5. Set the *Container* *Visibility* property to "true" to show the spinner
 
 ## Page Setup: Contained Spinner
 1. Drag a *Container* control to a page
@@ -57,9 +59,9 @@ initSpinners();
 3. Drag another *Container* control into the first *Container* control (I will call this one "SpinnerContainer")
 4. Add the class "stadium-spinner" to the SpinnerContainer's classes property
 5. Add the class "spinner-contained" to the SpinnerContainer's classes property
-6. Add the class "spinner-type-1" to the SpinnerContainer's classes property (or any other number from 1 to 9)
-7. Set the *Container's* *Visibility* property to "false" to hide the spinner
-8. Set the *Container's* *Visibility* property to "true" to show the spinner
+6. Add the class "spinner-type-1" to the SpinnerContainer's classes property (or any other number from 1 to 83, e.g. spinner-type-64)
+7. Set the *Container* *Visibility* property to "false" to hide the spinner
+8. Set the *Container* *Visibility* property to "true" to show the spinner
 
 Setup:
 

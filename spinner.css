@@ -26,613 +26,38 @@
     overflow: hidden;
     z-index: 9000;
     max-height: 100vh;
-
-    .spinner-type-1 {
-        width: var(--stadium-spinner-width, 48px);
-        height: var(--stadium-spinner-height, 48px);
-        border: 5px solid var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR));
-        border-bottom-color: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
-        border-radius: 50%;
-        display: inline-block;
-        box-sizing: border-box;
-        animation: rotation 1s linear infinite;
-    }
-
-    .spinner-type-2 {
-        width: var(--stadium-spinner-width, 48px);
-        height: var(--stadium-spinner-height, 48px);
-        border: 5px solid var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
-        border-bottom-color: transparent;
-        border-radius: 50%;
-        display: inline-block;
-        box-sizing: border-box;
-        animation: rotation 1s linear infinite;
-    }
-
-    /*------------------------------------------------------------------*/
-    .spinner-type-3 {
-        transform: rotateZ(45deg);
-        perspective: 1000px;
-        border-radius: 50%;
-        width: var(--stadium-spinner-width, 48px);
-        height: var(--stadium-spinner-height, 48px);
-        color: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
-    }
-
-    .spinner-type-3:before,
-    .spinner-type-3:after {
-        content: '';
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: inherit;
-        height: inherit;
-        border-radius: 50%;
-        transform: rotateX(70deg);
-        animation: 1s spin linear infinite;
-    }
-
-    .spinner-type-3:after {
-        color: var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR));
-        transform: rotateY(70deg);
-        animation-delay: .4s;
-    }
-
-    /*------------------------------------------------------------------*/
-    .spinner-type-4 {
-        width: var(--stadium-spinner-width, 48px);
-        height: var(--stadium-spinner-height, 48px);
-        border: 10px solid var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR));
-        border-radius: 50%;
-        position: relative;
-        transform: rotate(45deg);
-        box-sizing: border-box;
-    }
-
-    .spinner-type-4::before {
-        content: "";
-        position: absolute;
-        box-sizing: border-box;
-        inset: -10px;
-        border-radius: 50%;
-        border: 10px solid var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
-        animation: prixClipFix 2s infinite linear;
-    }
-
-    /*------------------------------------------------------------------*/
-    .spinner-type-5 {
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        display: block;
-        margin: 15px auto;
-        position: relative;
-        color: var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR));
-        left: -100px;
-        box-sizing: border-box;
-        animation: shadowRolling 2s linear infinite;
-    }
-
-    /*------------------------------------------------------------------*/
-    .spinner-type-6 {
-        width: var(--stadium-spinner-width, 48px);
-        height: var(--stadium-spinner-height, 48px);
-        border: 3px solid var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR));
-        border-radius: 50%;
-        display: inline-block;
-        position: relative;
-        box-sizing: border-box;
-        animation: rotation 1s linear infinite;
-    }
-
-    .spinner-type-6::after {
-        content: '';
-        box-sizing: border-box;
-        position: absolute;
-        left: 0;
-        top: 0;
-        background: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
-        width: 16px;
-        height: 16px;
-        transform: translate(-50%, 50%);
-        border-radius: 50%;
-    }
-
-    /*------------------------------------------------------------------*/
-    .spinner-type-7 {
-        width: var(--stadium-spinner-width, 48px);
-        height: var(--stadium-spinner-height, 48px);
-        border-radius: 50%;
-        display: inline-block;
-        position: relative;
-        border: 3px solid;
-        border-color: var(--stadium-spinner-color2, var(--SECONDARY-THEME-COLOR)) var(--stadium-spinner-color2, var(--SECONDARY-THEME-COLOR)) transparent transparent;
-        box-sizing: border-box;
-        animation: rotation 1s linear infinite;
-    }
-
-    .spinner-type-7::after,
-    .spinner-type-7::before {
-        content: '';
-        box-sizing: border-box;
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        margin: auto;
-        border: 3px solid;
-        border-color: transparent transparent var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)) var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        box-sizing: border-box;
-        animation: rotationBack 0.5s linear infinite;
-        transform-origin: center center;
-    }
-
-    .spinner-type-7::before {
-        width: 32px;
-        height: 32px;
-        border-color: var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR)) var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR)) transparent transparent;
-        animation: rotation 1.5s linear infinite;
-    }
-
-    /*------------------------------------------------------------------*/
-    .spinner-type-8 {
-        width: var(--stadium-spinner-width, 48px);
-        height: var(--stadium-spinner-height, 48px);
-        border: 3px dotted var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR));
-        border-style: solid solid dotted dotted;
-        border-radius: 50%;
-        display: inline-block;
-        position: relative;
-        box-sizing: border-box;
-        animation: rotation 2s linear infinite;
-    }
-
-    .spinner-type-8::after {
-        content: '';
-        box-sizing: border-box;
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        margin: auto;
-        border: 3px dotted var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
-        border-style: solid solid dotted;
-        width: 24px;
-        height: 24px;
-        border-radius: 50%;
-        animation: rotationBack 1s linear infinite;
-        transform-origin: center center;
-    }
-    /*------------------------------------------------------------------*/
-    .spinner-type-9 {
-        width: 28px;
-        aspect-ratio: 1;
-        border-radius: 50%;
-        background: var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR));
-        transform-origin: top;
-        display: grid;
-        animation: l3-0 1s infinite linear;
-    }
-
-    .spinner-type-9::before,
-    .spinner-type-9::after {
-        content: "";
-        grid-area: 1/1;
-        background: var(--stadium-spinner-color2, var(--SECONDARY-THEME-COLOR));
-        border-radius: 50%;
-        transform-origin: top;
-        animation: inherit;
-        animation-name: l3-1;
-    }
-
-    .spinner-type-9::after {
-        background: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
-        --s: 180deg;
-    }
-    /*----------------------------------------------------------------*/
-    .spinner-type-10 {
-        width: 28px;
-        aspect-ratio: 1;
-        border-radius: 50%;
-        background: var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR));
-        animation: l2 1.5s infinite;
-    }
-    /*------------------------------------------------------------------*/
-    .spinner-type-11 {
-        width: 50px;
-        aspect-ratio: 1;
-        border-radius: 50%;
-        background: 
-            radial-gradient(farthest-side,var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR)) 95%,transparent) 50% 1px/12px 12px no-repeat,
-            radial-gradient(farthest-side,transparent calc(100% - 14px),var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)) 0);
-        animation: l9 2s infinite linear;
-    }
-    /*------------------------------------------------------------------*/
-    .spinner-type-12 {
-        width: 40px;
-        height: 40px;
-        position: relative;
-        --c: no-repeat linear-gradient(var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR)) 0 0);
-        background:
-            var(--c) center/100% 10px,
-            var(--c) center/10px 100%;
-    }
-
-    .spinner-type-12:before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background:
-            var(--c) 0 0,
-            var(--c) 100% 0,
-            var(--c) 0 100%,
-            var(--c) 100% 100%;
-        background-size: 15.5px 15.5px;
-        animation: l16 1.5s infinite cubic-bezier(0.3, 1, 0, 1);
-    }
-    /*------------------------------------------------------------------*/
-    .spinner-type-13 {
-        width: calc(100px - 14px);
-        height: 50px;
-        border-radius: 50px;
-        background: 
-        radial-gradient(farthest-side,transparent calc(100% - 15px),var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR)) calc(100% - 14px) 99%,transparent) left,
-        radial-gradient(farthest-side,transparent calc(100% - 15px),var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR)) calc(100% - 14px) 99%,transparent) right;
-        background-size: calc(50% + 7px) 100%;
-        background-repeat: no-repeat;
-        position: relative;
-        animation: l10-0 1s infinite linear;
-    }
-    .spinner-type-13:before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        margin: auto; 
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        background: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
-        transform-origin: -14px 50%;
-        animation: l10-1 0.5s infinite linear;
-    }
-    /*------------------------------------------------------------------*/
-    .spinner-type-14 {
-        width: 80px;
-        aspect-ratio: 1;
-        background: 
-            radial-gradient(farthest-side at top,transparent calc(100% - 21px),var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR)) calc(100% - 20px) 99%,transparent) bottom/100% 50%,
-            radial-gradient(farthest-side,var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR)) 94%,transparent ) left /20px 20px,
-            radial-gradient(farthest-side,var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR)) 94%,transparent ) right/20px 20px;
-        background-repeat: no-repeat;
-        position: relative;
-    }
-    .spinner-type-14::before {
-        content: "";
-        position: absolute;
-        width: 20px;
-        height: 20px;
-        inset: auto 0 0;
-        margin: auto;
-        border-radius: 50%;
-        background: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
-        transform-origin: 50% -20px;
-        animation: l14 1s infinite cubic-bezier(0.5,623,0.5,-623);
-    }
-    /*------------------------------------------------------------------*/
-    .spinner-type-15 {
-        width: 60px;
-        height: 60px;
-        display: flex;
-        color: var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR));
-        --c: transparent calc(100% - 20px), currentColor calc(100% - 19px) 98%, transparent;
-        background:
-            radial-gradient(farthest-side at left, var(--c)) right /50% 100%,
-            radial-gradient(farthest-side at top, var(--c)) bottom/100% 50%;
-        background-repeat: no-repeat;
-        animation: l18-0 2s infinite linear .25s;
-    }
-    .spinner-type-15::before {
-        content: "";
-        width: 50%;
-        height: 50%;
-        background: radial-gradient(farthest-side at bottom right, var(--c));
-        animation: l18-1 .5s infinite linear;
-    }
-    /*------------------------------------------------------------------*/
-    .spinner-type-16 {
-        width: 50px;
-        height: 50px;
-        display: flex;
-        color: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
-        background:
-            linear-gradient(currentColor 0 0) right /51% 100%,
-            linear-gradient(currentColor 0 0) bottom /100% 51%;
-        background-repeat: no-repeat;
-        animation: l17-0 2s infinite linear .25s;
-    }
-    .spinner-type-16::before {
-        content: "";
-        width: 50%;
-        height: 50%;
-        background: currentColor;
-        transform-origin: 10% 10%;
-        animation: l17-1 .5s infinite linear;
-    }
-    /*------------------------------------------------------------------*/
-    .spinner-type-17 {
-        width: 120px;
-        height: 20px;
-        -webkit-mask: linear-gradient(90deg,var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR)) 70%,transparent 0) left/20% 100%;
-        background:
-        linear-gradient(var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR)) 0 0) left -25% top 0 /20% 100% no-repeat
-        var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
-        animation: l7 1s infinite steps(6);
-    }
-    /*------------------------------------------------------------------*/
-    .spinner-type-18 {
-        width: 120px;
-        height: 60px;
-        border-radius: 200px 200px 0 0;
-        -webkit-mask: repeating-radial-gradient(farthest-side at bottom ,var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR)) 0,var(--stadium-spinner-color2, var(--SECONDARY-THEME-COLOR)) 1px 12%,transparent calc(12% + 1px) 20%);
-        background:
-        radial-gradient(farthest-side at bottom,var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR)) 0 95%,transparent 0) bottom/0% 0% no-repeat
-        var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
-        animation: l10 2s infinite steps(6);
-    }
-    /*------------------------------------------------------------------*/
-    .spinner-type-19 {
-        width: 90px;
-        height: 14px;
-        box-shadow: 0 3px 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
-        position: relative;
-        display: grid;
-        clip-path: inset(-60px 0 -5px)
-    }
-    .spinner-type-19:after {
-        content: "";
-        position: relative;
-        background: repeating-linear-gradient(90deg,transparent 0 calc(50% - 8px), var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR)) 0 calc(50% + 8px), transparent 0 100%) 0 0/calc(100%/3) 100%;
-        animation: l6-1 1s infinite;
-    } 
-    .spinner-type-19:before {
-        content: "";
-        position: absolute;
-        width: 14px;
-        aspect-ratio: 1;
-        left: calc(50% - 7px);
-        bottom: 0;
-        border-radius: 50%;
-        background: var(--stadium-spinner-color2, var(--SECONDARY-THEME-COLOR));
-        animation: l6-2 1s infinite;
-    }
-    /*------------------------------------------------------------------*/
-    .spinner-type-20 {
-        width: 60px;
-        aspect-ratio: 4;
-        background: radial-gradient(closest-side at calc(100%/6) 50%,var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)) 90%,transparent) 0/75% 100%;
-        position: relative;
-        animation: l15-0 1s infinite linear;
-    }
-    .spinner-type-20::before {
-        content:"";
-        position: absolute;
-        background: inherit;
-        clip-path: inset(0 0 0 50%);
-        inset: 0;
-        animation: l15-1 0.5s infinite linear;
-    }
-}
-@keyframes l15-0 {
-
-    0%,
-    49.99% {
-        transform: scale(1)
-    }
-
-    50%,
-    100% {
-        transform: scale(-1)
-    }
-}
-@keyframes l15-1 {
-    0% {
-        transform: translateX(-37.5%) rotate(0turn)
-    }
-
-    80%,
-    100% {
-        transform: translateX(-37.5%) rotate(1turn)
-    }
-}
-@keyframes l6-1 {
-  50%,100% {background-position: calc(100%/2) 0}
-}
-@keyframes l6-2 {
-  0%,50% {transform:translateY(-80px)}
-}
-@keyframes l10 {
-    100% {
-        background-size: 120% 120%
-    }
-}
-@keyframes l7 {
-    100% {
-        background-position: right -25% top 0
-    }
-}
-@keyframes l17-0 {
-
-    0%,
-    12.49% {
-        transform: rotate(0deg)
-    }
-
-    12.5%,
-    37.49% {
-        transform: rotate(90deg)
-    }
-
-    37.5%,
-    62.49% {
-        transform: rotate(180deg)
-    }
-
-    62.5%,
-    87.49% {
-        transform: rotate(270deg)
-    }
-
-    87.5%,
-    100% {
-        transform: rotate(360deg)
-    }
 }
 
-@keyframes l17-1 {
-    0% {
-        transform: perspective(80px) rotate3d(-1, 1, 0, 0)
-    }
-
-    80%,
-    100% {
-        transform: perspective(80px) rotate3d(-1, 1, 0, -360deg)
-    }
+div[class^="spinner-type-"] {
+    position: relative;
 }
-@keyframes l18-0 {
-
-    0%,
-    12.49% {
-        transform: rotate(0deg)
-    }
-
-    12.5%,
-    37.49% {
-        transform: rotate(90deg)
-    }
-
-    37.5%,
-    62.49% {
-        transform: rotate(180deg)
-    }
-
-    62.5%,
-    87.49% {
-        transform: rotate(270deg)
-    }
-
-    87.5%,
-    100% {
-        transform: rotate(360deg)
-    }
+div[class^="spinner-type-"]:before, 
+div[class^="spinner-type-"]:after {
+    display: block;
 }
 
-@keyframes l18-1 {
-    0% {
-        transform: perspective(150px) rotateY(0) rotate(0)
-    }
-
-    50% {
-        transform: perspective(150px) rotateY(180deg) rotate(0)
-    }
-
-    80%,
-    100% {
-        transform: perspective(150px) rotateY(180deg) rotate(90deg)
-    }
-}@keyframes l14 {
-    100% {
-        transform: rotate(0.5deg)
-    }
-}
-@keyframes l10-0 {
-
-    0%,
-    49.99% {
-        transform: scaleX(1)
-    }
-
-    50%,
-    100% {
-        transform: scaleX(-1)
-    }
+/*---SPINNERS---------------------------------------------------------------*/
+.spinner-type-1 {
+    width: var(--stadium-spinner-width, 48px);
+    height: var(--stadium-spinner-height, 48px);
+    border: 5px solid var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    border-bottom-color: var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR));
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
 }
 
-@keyframes l10-1 {
-    100% {
-        transform: rotate(1turn)
-    }
+.spinner-type-2 {
+    width: var(--stadium-spinner-width, 48px);
+    height: var(--stadium-spinner-height, 48px);
+    border: 5px solid var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
 }
-@keyframes l16 {
-    33% {
-        inset: -10px;
-        transform: rotate(0deg)
-    }
-
-    66% {
-        inset: -10px;
-        transform: rotate(90deg)
-    }
-
-    100% {
-        inset: 0;
-        transform: rotate(90deg)
-    }
-}
-@keyframes l9 {
-    to {
-        transform: rotate(1turn)
-    }
-}
-@keyframes l2 {
-    0%,
-    100% {
-        transform: translate(-35px);
-        box-shadow: 0 0 var(--stadium-spinner-color2, var(--SECONDARY-THEME-COLOR)), 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR))
-    }
-
-    40% {
-        transform: translate(35px);
-        box-shadow: -15px 0 var(--stadium-spinner-color2, var(--SECONDARY-THEME-COLOR)), -30px 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR))
-    }
-
-    50% {
-        transform: translate(35px);
-        box-shadow: 0 0 var(--stadium-spinner-color2, var(--SECONDARY-THEME-COLOR)), 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR))
-    }
-
-    90% {
-        transform: translate(-35px);
-        box-shadow: 15px 0 var(--stadium-spinner-color2, var(--SECONDARY-THEME-COLOR)), 30px 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR))
-    }
-}
-@keyframes l3-0 {
-
-    0%,
-    20% {
-        transform: rotate(0)
-    }
-
-    100% {
-        transform: rotate(360deg)
-    }
-}
-
-@keyframes l3-1 {
-    50% {
-        transform: rotate(var(--s, 90deg))
-    }
-
-    100% {
-        transform: rotate(0)
-    }
-}
-
 @keyframes rotation {
     0% {
         transform: rotate(0deg);
@@ -642,29 +67,37 @@
         transform: rotate(360deg);
     }
 }
-
-@keyframes rotate {
-    0% {
-        transform: translate(-50%, -50%) rotateZ(0deg);
-    }
-
-    100% {
-        transform: translate(-50%, -50%) rotateZ(360deg);
-    }
+/*------------------------------------------------------------------*/
+.spinner-type-3 {
+    transform: rotateZ(45deg);
+    perspective: 1000px;
+    border-radius: 50%;
+    width: var(--stadium-spinner-width, 48px);
+    height: var(--stadium-spinner-height, 48px);
+    color: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
 }
 
-@keyframes rotateccw {
-    0% {
-        transform: translate(-50%, -50%) rotate(0deg);
-    }
-
-    100% {
-        transform: translate(-50%, -50%) rotate(-360deg);
-    }
+.spinner-type-3:before,
+.spinner-type-3:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: inherit;
+    height: inherit;
+    border-radius: 50%;
+    transform: rotateX(70deg);
+    animation: 1s spin-3 linear infinite;
 }
 
-@keyframes spin {
+.spinner-type-3:after {
+    color: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    transform: rotateY(70deg);
+    animation-delay: .4s;
+}
 
+@keyframes spin-3 {
     0%,
     100% {
         box-shadow: .2em 0px 0 0px currentcolor;
@@ -697,6 +130,26 @@
     87% {
         box-shadow: .2em -.2em 0 0 currentcolor;
     }
+}
+
+/*------------------------------------------------------------------*/
+.spinner-type-4 {
+    width: var(--stadium-spinner-width, 48px);
+    height: var(--stadium-spinner-height, 48px);
+    border: 10px solid var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR));
+    border-radius: 50%;
+    transform: rotate(45deg);
+    box-sizing: border-box;
+}
+
+.spinner-type-4::before {
+    content: "";
+    position: absolute;
+    box-sizing: border-box;
+    inset: -10px;
+    border-radius: 50%;
+    border: 10px solid var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    animation: prixClipFix 2s infinite linear;
 }
 
 @keyframes prixClipFix {
@@ -736,6 +189,18 @@
         clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0)
     }
 }
+/*------------------------------------------------------------------*/
+.spinner-type-5 {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: block;
+    margin: 15px auto;
+    color: var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR));
+    left: -100px;
+    box-sizing: border-box;
+    animation: shadowRolling 2s linear infinite;
+}
 
 @keyframes shadowRolling {
     0% {
@@ -774,6 +239,68 @@
         box-shadow: 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0);
     }
 }
+/*------------------------------------------------------------------*/
+.spinner-type-6 {
+    width: var(--stadium-spinner-width, 48px);
+    height: var(--stadium-spinner-height, 48px);
+    border: 3px solid var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+
+.spinner-type-6::after {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    width: 16px;
+    height: 16px;
+    transform: translate(-50%, 50%);
+    border-radius: 50%;
+}
+
+/*------------------------------------------------------------------*/
+.spinner-type-7 {
+    width: var(--stadium-spinner-width, 48px);
+    height: var(--stadium-spinner-height, 48px);
+    border-radius: 50%;
+    display: inline-block;
+    border: 3px solid;
+    border-color: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)) var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)) transparent transparent;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+
+.spinner-type-7::after,
+.spinner-type-7::before {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    border: 3px solid;
+    border-color: transparent transparent var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)) var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    animation: rotationBack 0.5s linear infinite;
+    transform-origin: center center;
+}
+
+.spinner-type-7::before {
+    width: 32px;
+    height: 32px;
+    border-color: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)) var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)) transparent transparent;
+    animation: rotation 1.5s linear infinite;
+}
 
 @keyframes rotationBack {
     0% {
@@ -784,3 +311,2602 @@
         transform: rotate(-360deg);
     }
 }
+/*------------------------------------------------------------------*/
+.spinner-type-8 {
+    width: var(--stadium-spinner-width, 48px);
+    height: var(--stadium-spinner-height, 48px);
+    border: 3px dotted var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    border-style: solid solid dotted dotted;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 2s linear infinite;
+}
+
+.spinner-type-8::after {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    border: 3px dotted var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    border-style: solid solid dotted;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    animation: rotationBack 1s linear infinite;
+    transform-origin: center center;
+}
+/*------------------------------------------------------------------*/
+.spinner-type-9 {
+    width: 28px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR));
+    transform-origin: top;
+    display: grid;
+    animation: l3-0 1s infinite linear;
+}
+
+.spinner-type-9::before,
+.spinner-type-9::after {
+    content: "";
+    grid-area: 1/1;
+    background: var(--stadium-spinner-color2, var(--SECONDARY-THEME-COLOR));
+    border-radius: 50%;
+    transform-origin: top;
+    animation: inherit;
+    animation-name: l3-1;
+}
+
+.spinner-type-9::after {
+    background: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    --s: 180deg;
+}
+
+@keyframes l3-0 {
+
+    0%,
+    20% {
+        transform: rotate(0)
+    }
+
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
+@keyframes l3-1 {
+    50% {
+        transform: rotate(var(--s, 90deg))
+    }
+
+    100% {
+        transform: rotate(0)
+    }
+}
+/*----------------------------------------------------------------*/
+.spinner-type-10 {
+    width: 28px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    animation: l2 1.5s infinite;
+}
+
+@keyframes l2 {
+
+    0%,
+    100% {
+        transform: translate(-35px);
+        box-shadow: 0 0 var(--stadium-spinner-color2, var(--SECONDARY-THEME-COLOR)), 0 0 var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR))
+    }
+
+    40% {
+        transform: translate(35px);
+        box-shadow: -15px 0 var(--stadium-spinner-color2, var(--SECONDARY-THEME-COLOR)), -30px 0 var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR))
+    }
+
+    50% {
+        transform: translate(35px);
+        box-shadow: 0 0 var(--stadium-spinner-color2, var(--SECONDARY-THEME-COLOR)), 0 0 var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR))
+    }
+
+    90% {
+        transform: translate(-35px);
+        box-shadow: 15px 0 var(--stadium-spinner-color2, var(--SECONDARY-THEME-COLOR)), 30px 0 var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR))
+    }
+}
+/*------------------------------------------------------------------*/
+.spinner-type-11 {
+    width: 50px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: 
+        radial-gradient(farthest-side,var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR)) 95%,transparent) 50% 1px/12px 12px no-repeat,
+        radial-gradient(farthest-side,transparent calc(100% - 14px),var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)) 0);
+    animation: l9 2s infinite linear;
+}
+
+@keyframes l9 {
+    to {
+        transform: rotate(1turn)
+    }
+}
+/*------------------------------------------------------------------*/
+.spinner-type-12 {
+    width: 40px;
+    height: 40px;
+    --c: no-repeat linear-gradient(var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)) 0 0);
+    background:
+        var(--c) center/100% 10px,
+        var(--c) center/10px 100%;
+}
+
+.spinner-type-12:before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        var(--c) 0 0,
+        var(--c) 100% 0,
+        var(--c) 0 100%,
+        var(--c) 100% 100%;
+    background-size: 15.5px 15.5px;
+    animation: l16 1.5s infinite cubic-bezier(0.3, 1, 0, 1);
+}
+
+@keyframes l16 {
+    33% {
+        inset: -10px;
+        transform: rotate(0deg)
+    }
+
+    66% {
+        inset: -10px;
+        transform: rotate(90deg)
+    }
+
+    100% {
+        inset: 0;
+        transform: rotate(90deg)
+    }
+}
+/*------------------------------------------------------------------*/
+.spinner-type-13 {
+    width: calc(100px - 14px);
+    height: 50px;
+    border-radius: 50px;
+    background: 
+    radial-gradient(farthest-side,transparent calc(100% - 15px),var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)) calc(100% - 14px) 99%,transparent) left,
+    radial-gradient(farthest-side,transparent calc(100% - 15px),var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)) calc(100% - 14px) 99%,transparent) right;
+    background-size: calc(50% + 7px) 100%;
+    background-repeat: no-repeat;
+    animation: l10-0 1s infinite linear;
+}
+@keyframes l10-0 {
+
+    0%,
+    49.99% {
+        transform: scaleX(1)
+    }
+
+    50%,
+    100% {
+        transform: scaleX(-1)
+    }
+}
+.spinner-type-13:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    margin: auto; 
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR));
+    transform-origin: -14px 50%;
+    animation: l10-1 0.5s infinite linear;
+}
+
+@keyframes l10-1 {
+    100% {
+        transform: rotate(1turn)
+    }
+}
+/*------------------------------------------------------------------*/
+.spinner-type-14 {
+    width: 80px;
+    aspect-ratio: 1;
+    background: 
+        radial-gradient(farthest-side at top,transparent calc(100% - 21px),var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)) calc(100% - 20px) 99%,transparent) bottom/100% 50%,
+        radial-gradient(farthest-side,var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)) 94%,transparent ) left /20px 20px,
+        radial-gradient(farthest-side,var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)) 94%,transparent ) right/20px 20px;
+    background-repeat: no-repeat;
+}
+.spinner-type-14::before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    inset: auto 0 0;
+    margin: auto;
+    border-radius: 50%;
+    background: var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR));
+    transform-origin: 50% -20px;
+    animation: l14 1s infinite cubic-bezier(0.5,623,0.5,-623);
+}
+@keyframes l14 {
+    100% {
+        transform: rotate(0.5deg)
+    }
+}
+/*------------------------------------------------------------------*/
+.spinner-type-15 {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    color: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    --c: transparent calc(100% - 20px), currentColor calc(100% - 19px) 98%, transparent;
+    background:
+        radial-gradient(farthest-side at left, var(--c)) right /50% 100%,
+        radial-gradient(farthest-side at top, var(--c)) bottom/100% 50%;
+    background-repeat: no-repeat;
+    animation: l18-0 2s infinite linear .25s;
+}
+@keyframes l18-0 {
+
+    0%,
+    12.49% {
+        transform: rotate(0deg)
+    }
+
+    12.5%,
+    37.49% {
+        transform: rotate(90deg)
+    }
+
+    37.5%,
+    62.49% {
+        transform: rotate(180deg)
+    }
+
+    62.5%,
+    87.49% {
+        transform: rotate(270deg)
+    }
+
+    87.5%,
+    100% {
+        transform: rotate(360deg)
+    }
+}
+.spinner-type-15::before {
+    content: "";
+    width: 50%;
+    height: 50%;
+    background: radial-gradient(farthest-side at bottom right, var(--c));
+    animation: l18-1 .5s infinite linear;
+}
+@keyframes l18-1 {
+    0% {
+        transform: perspective(150px) rotateY(0) rotate(0)
+    }
+
+    50% {
+        transform: perspective(150px) rotateY(180deg) rotate(0)
+    }
+
+    80%,
+    100% {
+        transform: perspective(150px) rotateY(180deg) rotate(90deg)
+    }
+}
+/*------------------------------------------------------------------*/
+.spinner-type-16 {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    color: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    background:
+        linear-gradient(currentColor 0 0) right /51% 100%,
+        linear-gradient(currentColor 0 0) bottom /100% 51%;
+    background-repeat: no-repeat;
+    animation: l17-0 2s infinite linear .25s;
+}
+@keyframes l17-0 {
+
+    0%,
+    12.49% {
+        transform: rotate(0deg)
+    }
+
+    12.5%,
+    37.49% {
+        transform: rotate(90deg)
+    }
+
+    37.5%,
+    62.49% {
+        transform: rotate(180deg)
+    }
+
+    62.5%,
+    87.49% {
+        transform: rotate(270deg)
+    }
+
+    87.5%,
+    100% {
+        transform: rotate(360deg)
+    }
+}
+.spinner-type-16::before {
+    content: "";
+    width: 50%;
+    height: 50%;
+    background: currentColor;
+    transform-origin: 10% 10%;
+    animation: l17-1 .5s infinite linear;
+}
+
+@keyframes l17-1 {
+    0% {
+        transform: perspective(80px) rotate3d(-1, 1, 0, 0)
+    }
+
+    80%,
+    100% {
+        transform: perspective(80px) rotate3d(-1, 1, 0, -360deg)
+    }
+}
+/*------------------------------------------------------------------*/
+.spinner-type-17 {
+    width: 120px;
+    height: 20px;
+    -webkit-mask: linear-gradient(90deg,var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR)) 70%,transparent 0) left/20% 100%;
+    background:
+    linear-gradient(var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR)) 0 0) left -25% top 0 /20% 100% no-repeat
+    var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    animation: l7 1s infinite steps(6);
+}
+@keyframes l7 {
+    100% {
+        background-position: right -25% top 0
+    }
+}
+/*------------------------------------------------------------------*/
+.spinner-type-18 {
+    width: 120px;
+    height: 60px;
+    border-radius: 200px 200px 0 0;
+    -webkit-mask: repeating-radial-gradient(farthest-side at bottom,var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR)) 0,var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)) 1px 12%,transparent calc(12% + 1px) 20%);
+    background: radial-gradient(farthest-side at bottom,var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR)) 0 95%,transparent 0) bottom/0% 0% no-repeat var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    animation: l10 2s infinite steps(6);
+}
+@keyframes l10 {
+    100% {
+        background-size: 120% 120%
+    }
+}
+/*------------------------------------------------------------------*/
+.spinner-type-19 {
+    width: 90px;
+    height: 14px;
+    box-shadow: 0 3px 0 var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR));
+    display: grid;
+    clip-path: inset(-60px 0 -5px)
+}
+.spinner-type-19:after {
+    content: "";
+    position: relative;
+    background: repeating-linear-gradient(90deg,transparent 0 calc(50% - 8px), var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)) 0 calc(50% + 8px), transparent 0 100%) 0 0/calc(100%/3) 100%;
+    animation: l6-1 1s infinite;
+} 
+@keyframes l6-1 {
+
+    50%,
+    100% {
+        background-position: calc(100%/2) 0
+    }
+}
+
+.spinner-type-19:before {
+    content: "";
+    position: absolute;
+    width: 14px;
+    aspect-ratio: 1;
+    left: calc(50% - 7px);
+    bottom: 0;
+    border-radius: 50%;
+    background: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    animation: l6-2 1s infinite;
+}
+@keyframes l6-2 {
+
+    0%,
+    50% {
+        transform: translateY(-80px)
+    }
+}
+/*------------------------------------------------------------------*/
+.spinner-type-20 {
+    width: 60px;
+    aspect-ratio: 4;
+    background: radial-gradient(closest-side at calc(100%/6) 50%,var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)) 90%,transparent) 0/75% 100%;
+    animation: l15-0 1s infinite linear;
+}
+@keyframes l15-0 {
+
+    0%,
+    49.99% {
+        transform: scale(1)
+    }
+
+    50%,
+    100% {
+        transform: scale(-1)
+    }
+}
+.spinner-type-20::before {
+    content:"";
+    position: absolute;
+    background: inherit;
+    clip-path: inset(0 0 0 50%);
+    inset: 0;
+    animation: l15-1 0.5s infinite linear;
+}
+@keyframes l15-1 {
+    0% {
+        transform: translateX(-37.5%) rotate(0turn)
+    }
+
+    80%,
+    100% {
+        transform: translateX(-37.5%) rotate(1turn)
+    }
+}
+/*------------------------------------------------------------------*/
+.spinner-type-21:before {
+    animation: scan 1s infinite;
+    background: linear-gradient(90deg, var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)) 20%, transparent 20%, transparent), linear-gradient(0deg, var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)) 20%, transparent 20%, transparent);
+    background-size: 50px 50px;
+    border: 5px solid var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    content: "";
+    height: 50px;
+    width: 50px;
+    transform: rotate(45deg);
+    display: block;
+}
+@keyframes scan {
+    0% {
+        background-position: -5px 0;
+    }
+
+    50% {
+        background-position: 40px 0;
+    }
+
+    100% {
+        background-position: 40px 50px;
+    }
+}
+/*------------------------------------------------------------------*/
+.spinner-type-22:before {
+    animation: spin-22 0.5s infinite linear;
+    border-radius: 100%;
+    border-top: 6px solid var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    content: "";
+    display: block;
+    height: 50px;
+    width: 50px;
+}
+
+@keyframes spin-22 {
+    to {
+        transform: rotate(360deg);
+    }
+}
+/*------------------------------------------------------------------*/
+.spinner-type-23 {
+    animation: spin 3s infinite linear;
+    height: 50px;
+    width: 50px;
+}
+
+.spinner-type-23:before {
+    content: "";
+    display: block;
+    height: 50px;
+    width: 10px;
+    animation: spin-22 0.5s infinite;
+    background: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    position: absolute;
+    left: 50%;
+    margin-left: -5px;
+}
+/*------------------------------------------------------------------*/
+.spinner-type-24:before {
+    content: "";
+    display: block;
+    height: 50px;
+    width: 50px;
+    animation: spin-22 0.5s infinite linear;
+    border: 6px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)) solid;
+    border-left-color: var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR));
+    border-radius: 100%;
+}
+/*------------------------------------------------------------------*/
+.spinner-type-25 {
+    height: 60px;
+    width: 40px;
+    background: transparent;
+    border-radius: 2px;
+    border: 5px solid var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+}
+
+.spinner-type-25:before {
+    content: "";
+    height: 12px;
+    width: 20px;
+    background: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    border-radius: 2px;
+}
+
+.spinner-type-25:after {
+    animation: battery-charge 1s infinite steps(6);
+    background: linear-gradient(0deg, transparent, transparent 5%, var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)) 5%, var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)) 19%, transparent 19%, transparent 24%, var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)) 24%, var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)) 38%, transparent 38%, transparent 43%, var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)) 43%, var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)) 57%, transparent 57%, transparent 62%, var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)) 62%, var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)) 76%, transparent 76%, transparent 81%, var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)) 81%, var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)) 95%, transparent 95%);
+    content: "";
+    height: 100%;
+    left: 50%;
+    position: absolute;
+    top: 0;
+    transform: translate(-50%, 0);
+    width: 24px;
+}
+
+@keyframes battery-charge {
+    0% {
+        -webkit-clip-path: inset(100% 0 0 0);
+        clip-path: inset(100% 0 0 0);
+    }
+
+    100% {
+        -webkit-clip-path: inset(-18% 0 0 0);
+        clip-path: inset(-18% 0 0 0);
+    }
+}
+/*------------------------------------------------------------------*/
+.spinner-type-26 {
+    height: 30px;
+    width: 30px;
+}
+
+.spinner-type-26:before,
+.spinner-type-26:after {
+    border-radius: 100%;
+    content: "";
+    display: block;
+    height: 30px;
+    width: 30px;
+}
+
+.spinner-type-26:before {
+    background-color: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    animation: scale-up 1s infinite ease;
+}
+
+.spinner-type-26:after {
+    animation: scale-26 1s infinite;
+    border: 4px solid var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    left: 0;
+    position: absolute;
+    top: 0;
+}
+
+@keyframes scale-up {
+    0% {
+        transform: scale(0);
+    }
+
+    50% {
+        transform: scale(1);
+    }
+}
+
+@keyframes scale-26 {
+
+    0%,
+    50% {
+        opacity: 0;
+    }
+
+    55% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(2);
+    }
+}
+/*------------------------------------------------------------------*/
+.spinner-type-27 {
+    align-items: center;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    width: 50px;
+}
+
+.spinner-type-27:after,
+.spinner-type-27:before {
+    border: 6px solid var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    border-radius: 100%;
+    position: absolute;
+    content: "";
+    display: block;
+}
+
+.spinner-type-27:before {
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    animation: spin-22 0.75s infinite linear reverse;
+    height: 30px;
+    width: 30px;
+}
+
+.spinner-type-27:after {
+    animation: spin-22 0.5s infinite linear;
+    height: 50px;
+    width: 50px;
+    border-right-color: transparent;
+    border-top-color: transparent;
+}
+/*------------------------------------------------------------------*/
+.spinner-type-28:before {
+    animation: whirl-bounce 0.5s cubic-bezier(0.6, 0.3, 0.8, 0.5) alternate infinite;
+    background: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    border-radius: 100%;
+    content: "";
+    display: block;
+    height: 20px;
+    width: 20px;
+    transform-origin: bottom center;
+}
+@keyframes whirl-bounce {
+    0% {
+        transform: translate(0, -150%) scaleX(1) scaleY(1);
+    }
+
+    100% {
+        transform: translate(0, 150%) scaleX(1.1) scaleY(0.9);
+    }
+}
+/*------------------------------------------------------------------*/
+.spinner-type-29 {
+    animation: spin 3s infinite linear;
+    height: 50px;
+    position: relative;
+    width: 50px;
+}
+
+.spinner-type-29:before {
+    content: "";
+    display: block;
+    height: 25px;
+    width: 25px;
+    animation: spin 0.5s infinite;
+    background: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -25px;
+    margin-top: -25px;
+}
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+/*------------------------------------------------------------------*/
+.spinner-type-30 {
+    position: relative;
+    height: 50px;
+    width: 50px;
+}
+
+.spinner-type-30:before {
+    animation: breakout 1.5s infinite;
+    display: block;
+    content: "";
+    height: 100%;
+    width: 100%;
+    border: 6px solid var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    border-radius: 100%;
+}
+@keyframes breakout {
+
+    0%,
+    40% {
+        border-width: 25px;
+    }
+
+    60% {
+        border-color: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+        border-width: 6px;
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    100% {
+        border-color: var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR));
+        opacity: 0;
+        transform: scale(2);
+    }
+}
+/*------------------------------------------------------------------*/
+.spinner-type-31 {
+    position: relative;
+}
+
+.spinner-type-31:after,
+.spinner-type-31:before {
+    content: "";
+    height: 30px;
+    width: 30px;
+    display: block;
+    animation: out 0.5s backwards, spin 1.25s 0.5s infinite ease;
+    border: 5px solid var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    border-radius: 100%;
+    box-shadow: 0 -40px 0 -5px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    position: absolute;
+}
+
+.spinner-type-31:after {
+    animation-delay: 0s, 1.25s;
+}
+
+@keyframes out {
+    from {
+        box-shadow: 0 0 0 -5px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    }
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+/*------------------------------------------------------------------*/
+.spinner-type-32 {
+    -webkit-clip-path: inset(0% 50% 50% 0%);
+    clip-path: inset(0% 50% 50% 0%);
+    height: 50px;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-25%, -25%);
+    width: 50px;
+}
+
+.spinner-type-32:before {
+    animation: spin 1.25s infinite linear reverse;
+    border-width: 6px;
+    border-style: solid;
+    border-top-color: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    border-bottom-color: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    border-left-color: var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR));
+    border-radius: 100%;
+    border-right-color: var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR));
+    content: "";
+    display: block;
+    height: 50px;
+    width: 50px;
+}
+/*------------------------------------------------------------------*/
+.spinner-type-33 {
+    -webkit-clip-path: inset(-2% 0% 50% 0);
+    clip-path: inset(-2% 0% 50% 0);
+    height: 50px;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -25%);
+    width: 50px;
+}
+
+.spinner-type-33:before {
+    animation: spin 1.25s infinite linear;
+    border-bottom-color: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    border-left-color: var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR));
+    border-radius: 100%;
+    border-right-color: var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR));
+    border-style: solid;
+    border-top-color: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    border-width: 6px;
+    content: "";
+    display: block;
+    height: 50px;
+    width: 50px;
+}
+/*------------------------------------------------------------------*/
+.spinner-type-34:before {
+    animation: spin 0.5s infinite linear;
+    content: "";
+    display: block;
+    height: 50px;
+    width: 50px;
+    border-width: 25px;
+    border-style: solid;
+    border-left-color: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    border-bottom-color: var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR));
+    border-radius: 100%;
+    border-right-color: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    border-top-color: var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR));
+}
+/*------------------------------------------------------------------*/
+.spinner-type-35 {
+    animation: spin 2s infinite linear;
+    height: 50px;
+    position: relative;
+    width: 50px;
+}
+
+.spinner-type-35:after,
+.spinner-type-35:before {
+    animation: grow 1.25s infinite ease;
+    background: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    border-radius: 100%;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    content: "";
+}
+
+.spinner-type-35:after {
+    height: 50%;
+    width: 50%;
+    transform-origin: 40% 80%;
+}
+
+.spinner-type-35:before {
+    height: 75%;
+    width: 75%;
+    transform-origin: -40% -80%;
+}
+
+@keyframes grow {
+
+    0%,
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(0);
+    }
+}
+/*------------------------------------------------------------------*/
+.spinner-type-36:before {
+    animation: dots-fade 2s infinite;
+    background-color: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    border-radius: 100%;
+    content: "";
+    display: block;
+    height: 20px;
+    width: 20px;
+}
+@keyframes dots-fade {
+    0% {
+        background: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+        opacity: 0;
+        transform: translateX(-175%);
+    }
+
+    10% {
+        opacity: 1;
+        transform: translateX(-175%);
+    }
+
+    20% {
+        background: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+        opacity: 0;
+        transform: translateX(-175%);
+    }
+
+    30% {
+        opacity: 0;
+        transform: translateX(0);
+    }
+
+    40% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    50% {
+        background: var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR));
+        opacity: 0;
+        transform: translateX(0);
+    }
+
+    60% {
+        background-color: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+        opacity: 0;
+        transform: translateX(175%);
+    }
+
+    70% {
+        opacity: 1;
+        transform: translateX(175%);
+    }
+
+    80%,
+    100% {
+        opacity: 0;
+        transform: translateX(175%);
+    }
+}
+
+/*------------------------------------------------------------------*/
+.spinner-type-37:before {
+    animation: dots-flow 0.85s infinite ease;
+    border-radius: 100%;
+    content: "";
+    height: 16px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -40px);
+    width: 16px;
+}
+
+@keyframes dots-flow {
+
+    0%,
+    100% {
+        box-shadow: -26px 32px 0px 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 0px 32px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 26px 32px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    }
+
+    35% {
+        box-shadow: -26px 32px 0 4px var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR)), 0px 32px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 26px 32px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    }
+
+    50% {
+        box-shadow: -26px 32px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 0px 32px 0 4px var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR)), 26px 32px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    }
+
+    65% {
+        box-shadow: -26px 32px 0px 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 0px 32px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 26px 32px 0 4px var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR));
+    }
+}
+/*------------------------------------------------------------------*/
+.spinner-type-38:before {
+    display: block;
+    height: 5px;
+    width: 5px;
+    content: "";
+    animation: spin 1s infinite;
+    border-radius: 100%;
+    box-shadow: 20px 0 0 5px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), -20px 0 0 5px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+/*------------------------------------------------------------------*/
+.spinner-type-39:after,
+.spinner-type-39:before {
+    border-radius: 100%;
+    display: block;
+    content: "";
+    position: absolute;
+}
+
+.spinner-type-39:after {
+    height: 15px;
+    width: 15px;
+    animation: spin 1s infinite linear;
+    box-shadow: 19px 0 0 0 var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR)), -19px 0 0 0 var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR));
+}
+
+.spinner-type-39:before {
+    height: 40px;
+    width: 40px;
+    border: 2px solid var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    top: -15px;
+    left: -15px;
+}
+/*------------------------------------------------------------------*/
+.spinner-type-40:before {
+    display: block;
+    content: "";
+    height: 50px;
+    width: 50px;
+    animation: spin 0.5s infinite linear;
+    border: 10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)) double;
+    border-left-style: solid;
+    border-radius: 100%;
+}
+/*------------------------------------------------------------------*/
+.spinner-type-41:before {
+    height: 50px;
+    width: 50px;
+    content: "";
+    display: block;
+    animation: spin 0.5s infinite linear;
+    border-width: 6px;
+    border-style: solid;
+    border-bottom-color: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    border-top-color: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    border-left-color: var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR));
+    border-radius: 100%;
+    border-right-color: var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR));
+}
+/*------------------------------------------------------------------*/
+.spinner-type-42:before {
+    display: block;
+    content: "";
+    height: 50px;
+    width: 50px;
+    animation: eclipse 1s infinite ease;
+    background-color: var(--bg);
+    border-radius: 100%;
+}
+
+@keyframes eclipse {
+    from {
+        box-shadow: inset 50px 0 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    }
+
+    to {
+        box-shadow: inset -50px 0 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    }
+}
+/*------------------------------------------------------------------*/
+@keyframes eight {
+    0% {
+        transform: rotate(0deg);
+        transform-origin: left bottom;
+    }
+
+    50% {
+        transform-origin: left bottom;
+        transform: rotate(360deg);
+    }
+
+    51% {
+        transform-origin: right top;
+    }
+
+    100% {
+        transform-origin: right top;
+        transform: rotate(0deg);
+    }
+}
+
+.spinner-type-43:before {
+    animation: eight 1.5s infinite ease;
+    background-color: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    display: block;
+    height: 30px;
+    width: 30px;
+    content: "";
+}
+/*------------------------------------------------------------------*/
+@keyframes fidget {
+    10% {
+        transform: skewX(60deg);
+    }
+
+    20% {
+        transform: skewX(-60deg);
+    }
+
+    30% {
+        transform: skewX(0deg);
+    }
+
+    40% {
+        transform: skewY(60deg);
+    }
+
+    50% {
+        transform: skewY(-60deg);
+    }
+
+    60% {
+        transform: skewY(0);
+    }
+}
+
+.spinner-type-44:before {
+    animation: fidget 1s infinite ease;
+    background-color: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    border-radius: 100%;
+    display: block;
+    content: "";
+    height: 40px;
+    width: 40px;
+}
+/*------------------------------------------------------------------*/
+.spinner-type-45 {
+    animation: flip-square-travel-switch 2s infinite linear;
+    height: 50px;
+    perspective: 150px;
+    position: relative;
+    width: 50px;
+}
+
+.spinner-type-45:before {
+    animation: flip-square-travel 1s infinite;
+    background-color: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    content: "";
+    display: block;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    transform-origin: bottom;
+}
+
+@keyframes flip-square-travel-switch {
+
+    0%,
+    50% {
+        transform: rotate(45deg);
+    }
+
+    50.001%,
+    100% {
+        transform: rotate(-45deg);
+    }
+}
+
+@keyframes flip-square-travel {
+    0% {
+        transform: translate(0, 0) rotateX(0deg);
+    }
+
+    50% {
+        transform: translate(0, -100%) rotateX(0deg);
+    }
+
+    100% {
+        transform: translate(0, -100%) rotateX(-180deg);
+    }
+}
+/*------------------------------------------------------------------*/
+.spinner-type-46:before {
+    animation: flip-square 1.5s infinite;
+    background-color: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    content: "";
+    display: block;
+    height: 50px;
+    width: 50px;
+}
+
+@keyframes flip-square {
+    0% {
+        transform: perspective(50px) rotate(45deg) rotateX(0deg) rotateY(0deg);
+    }
+
+    50% {
+        transform: perspective(50px) rotate(45deg) rotateX(-180deg) rotateY(0deg);
+    }
+
+    100% {
+        transform: perspective(50px) rotate(45deg) rotateX(-180deg) rotateY(-180deg);
+    }
+}
+/*------------------------------------------------------------------*/
+@keyframes fly-by {
+    0% {
+        opacity: 0;
+        transform: translateX(-200%) scale(0);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateX(0) scale(1.25);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(200%) scale(0);
+    }
+}
+
+.spinner-type-47:before {
+    animation: fly-by 1s infinite ease;
+    background-color: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    border-radius: 100%;
+    display: block;
+    content: "";
+    height: 40px;
+    width: 40px;
+}
+/*------------------------------------------------------------------*/
+.spinner-type-48:before {
+    display: block;
+    height: 5px;
+    width: 5px;
+    content: "";
+    animation: spin 1s infinite;
+    border-radius: 100%;
+    box-shadow: 20px 0 0 5px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 0 20px 0 5px var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR)), 0 -20px 0 5px var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR)), -20px 0 0 5px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+}
+/*------------------------------------------------------------------*/
+@keyframes gyro {
+    0% {
+        transform: scale(1) rotate(0deg) translateY(calc(var(--radius) * 1%));
+    }
+
+    50% {
+        transform: scale(0.5) rotate(1440deg) translateY(0);
+    }
+
+    100% {
+        transform: scale(1) rotate(2920deg) translateY(calc(var(--radius) * 1%));
+    }
+}
+
+.spinner-type-49:after,
+.spinner-type-49:before {
+    --radius: 250;
+    animation: gyro 2s infinite linear;
+    background: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    border-radius: 100%;
+    content: "";
+    height: 20px;
+    width: 20px;
+    position: absolute;
+}
+
+.spinner-type-49:before {
+    --radius: -250;
+    background: var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR));
+}
+/*------------------------------------------------------------------*/
+@keyframes hourglass-spin {
+
+    0%,
+    10% {
+        background-position: 0 90%;
+    }
+
+    40%,
+    60% {
+        background-position: 0 10%;
+    }
+
+    90%,
+    100% {
+        background-position: 0 -70%;
+    }
+}
+
+@keyframes hourglass-container-spin {
+
+    0%,
+    40% {
+        transform: rotate(-180deg);
+    }
+
+    50%,
+    90% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(180deg);
+    }
+}
+
+.spinner-type-50 {
+    animation: hourglass-container-spin 4s infinite;
+    height: 40px;
+    position: relative;
+    width: 40px;
+}
+
+.spinner-type-50:after,
+.spinner-type-50:before {
+    background-size: 100% 300%;
+    border-radius: 100%;
+    border: 4px solid var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    height: 40px;
+    width: 40px;
+    animation-name: hourglass-spin;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    content: "";
+    position: absolute;
+    background-image: linear-gradient(0deg, transparent, transparent 50%, var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR)) 50%, var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR)));
+}
+
+.spinner-type-50:after {
+    transform: translateY(-20px);
+}
+
+.spinner-type-50:before {
+    animation-delay: -2s;
+    animation-direction: reverse;
+    transform: translateY(20px);
+}
+/*------------------------------------------------------------------*/
+.spinner-type-51:before {
+    animation: line-of-dots 1s infinite ease backwards;
+    border-radius: 100%;
+    content: "";
+    height: 10px;
+    transform: translate(0, -100%);
+    width: 10px;
+}
+
+@keyframes line-of-dots {
+    0% {
+        box-shadow: -30px 10px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), -15px 10px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 0 10px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 15px 10px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px 10px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    }
+
+    10% {
+        box-shadow: -30px 10px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), -15px 10px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 0 10px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 15px 10px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px 10px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    }
+
+    20% {
+        box-shadow: -30px 10px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), -15px 10px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 0 10px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 15px 10px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px 10px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    }
+
+    30% {
+        box-shadow: -30px 10px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), -15px 10px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 0 10px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 15px 10px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px 10px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    }
+
+    40% {
+        box-shadow: -30px 10px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), -15px 10px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 0 10px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 15px 10px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px 10px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    }
+
+    50% {
+        box-shadow: -30px 10px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), -15px 10px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 0 10px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 15px 10px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px 10px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    }
+
+    60% {
+        box-shadow: -30px 10px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), -15px 10px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 0 10px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 15px 10px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px 10px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    }
+
+    70% {
+        box-shadow: -30px 10px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), -15px 10px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 0 10px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 15px 10px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px 10px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    }
+
+    80% {
+        box-shadow: -30px 10px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), -15px 10px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 0 10px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 15px 10px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px 10px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    }
+
+    90% {
+        box-shadow: -30px 10px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), -15px 10px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 0 10px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 15px 10px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px 10px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    }
+
+    100% {
+        box-shadow: -30px 10px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), -15px 10px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 0 10px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 15px 10px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px 10px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    }
+}
+/*------------------------------------------------------------------*/
+@keyframes line {
+    from {
+        background-position: -60px 0;
+    }
+
+    to {
+        background-position: 60px 0;
+    }
+}
+
+.spinner-type-51:before {
+    animation: line 0.75s infinite alternate ease-in-out;
+    background: linear-gradient(90deg, var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)));
+    background-repeat: no-repeat;
+    background-size: 60px 20px;
+    content: "";
+    display: block;
+    height: 20px;
+    width: 60px;
+}
+/*------------------------------------------------------------------*/
+.spinner-type-52 {
+    animation: load-man-travel 1.2s infinite linear;
+    background: repeating-linear-gradient(90deg, var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR)), var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR)) 5%, transparent 5%, transparent 35%);
+    height: 10px;
+    left: 50%;
+    margin-top: -5px;
+    position: absolute;
+    top: 50%;
+    width: 200px;
+}
+
+.spinner-type-52:after,
+.spinner-type-52:before {
+    content: "";
+    position: absolute;
+    left: -25px;
+    top: 50%;
+    border: 25px solid var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    border-radius: 100%;
+    margin-top: -25px;
+}
+
+.spinner-type-52:before {
+    --close: -90;
+    animation: load-man-chomp 0.35s infinite linear;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+}
+
+.spinner-type-52:after {
+    --close: 0;
+    animation: load-man-chomp 0.35s infinite linear;
+    border-right-color: transparent;
+    border-top-color: transparent;
+}
+
+@keyframes load-man-travel {
+    to {
+        background-position: -200px 0;
+    }
+}
+
+@keyframes load-man-chomp {
+    0% {
+        transform: rotate(-45deg);
+    }
+
+    50% {
+        transform: rotate(calc(var(--close) * 1deg));
+    }
+
+    100% {
+        transform: rotate(-45deg);
+    }
+}
+
+/*------------------------------------------------------------------*/
+@keyframes grow {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(0.25);
+    }
+}
+
+.spinner-type-53 {
+    animation: spin 1.3333333333s infinite linear;
+    height: 30px;
+    position: relative;
+    width: 30px;
+}
+
+.spinner-type-53:after,
+.spinner-type-53:before {
+    content: "";
+    height: 30px;
+    width: 30px;
+    animation: grow 2s infinite ease backwards;
+    border-radius: 100%;
+    background: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    opacity: 0.75;
+    position: absolute;
+    transform-origin: -200% -80%;
+}
+
+.spinner-type-53:before {
+    background: var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR));
+    transform-origin: 200% 80%;
+}
+/*------------------------------------------------------------------*/
+.spinner-type-54:before {
+    animation: mexican-wave 0.75s infinite ease backwards;
+    border-radius: 100%;
+    content: "";
+    height: 10px;
+    position: absolute;
+    transform: translateY(10px);
+    width: 10px;
+}
+
+@keyframes mexican-wave {
+    0% {
+        box-shadow: -30px -10px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), -15px -10px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 0 -10px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 15px -10px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px -10px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    }
+
+    15% {
+        box-shadow: -30px -20px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), -15px -10px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 0 -10px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 15px -10px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px -10px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    }
+
+    30% {
+        box-shadow: -30px -10px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), -15px -20px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 0 -10px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 15px -10px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px -10px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    }
+
+    45% {
+        box-shadow: -30px -10px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), -15px -10px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 0 -20px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 15px -10px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px -10px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    }
+
+    60% {
+        box-shadow: -30px -10px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), -15px -10px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 0 -10px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 15px -20px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px -10px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    }
+
+    75% {
+        box-shadow: -30px -10px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), -15px -10px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 0 -10px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 15px -10px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px -20px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    }
+
+    100% {
+        box-shadow: -30px -10px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), -15px -10px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 0 -10px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 15px -10px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px -10px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    }
+}
+/*------------------------------------------------------------------*/
+@keyframes orbit {
+    0% {
+        opacity: 0;
+        transform: scale(0) translateX(-300%);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.25) translateX(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(0) translateX(300%);
+    }
+}
+
+.spinner-type-55:before {
+    animation: orbit 1s infinite;
+    background-color: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    border-radius: 100%;
+    content: "";
+    height: 50px;
+    width: 50px;
+    display: block;
+}
+/*------------------------------------------------------------------*/
+@keyframes outline-square {
+    0% {
+        background: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+        transform: translate(-100%, -100%);
+    }
+
+    25% {
+        background: var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR));
+        transform: translate(-100%, 100%);
+    }
+
+    50% {
+        background: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+        transform: translate(100%, 100%);
+    }
+
+    75% {
+        background: var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR));
+        transform: translate(100%, -100%);
+    }
+
+    100% {
+        background: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+        transform: translate(-100%, -100%);
+    }
+}
+
+.spinner-type-56:before {
+    content: "";
+    display: block;
+    height: 30px;
+    width: 30px;
+    animation: outline-square 1.5s infinite;
+    border-radius: 100%;
+}
+/*------------------------------------------------------------------*/
+@keyframes pendulum {
+    from {
+        transform: rotate(50deg);
+    }
+
+    to {
+        transform: rotate(-50deg);
+    }
+}
+
+.spinner-type-57:after {
+    background: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    border-radius: 100%;
+    bottom: 0;
+    content: "";
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -15px;
+    transform-origin: 50% -200%;
+    transform: translate(-50%, 0);
+    animation: pendulum 1s infinite alternate ease-in-out;
+}
+/*------------------------------------------------------------------*/
+@keyframes pill {
+    0% {
+        background-position: 0 0;
+        transform: rotate(0deg);
+    }
+
+    25% {
+        background-position: 0 100%;
+        transform: rotate(0deg);
+    }
+
+    50% {
+        background-position: 0 100%;
+        transform: rotate(180deg);
+    }
+
+    75% {
+        background-position: 0 200%;
+        transform: rotate(180deg);
+    }
+
+    100% {
+        background-position: 0 200%;
+        transform: rotate(360deg);
+    }
+}
+
+.spinner-type-58:before {
+    content: "";
+    height: 60px;
+    width: 30px;
+    animation: pill 2s infinite backwards;
+    background: linear-gradient(0deg, var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR)), var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR)) 50%, transparent 50%, transparent);
+    background-size: 100% 200%;
+    background-repeat: no-repeat;
+    border: 6px solid var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    border-radius: 15px;
+}
+/*------------------------------------------------------------------*/
+@keyframes radial {
+    0% {
+        transform: rotate(calc(var(--base) * 1deg)) translateY(150%);
+    }
+
+    100% {
+        transform: rotate(calc((var(--base) + 1440) * 1deg)) translateY(150%);
+    }
+}
+
+.spinner-type-59:after,
+.spinner-type-59:before {
+    background-color: var(--color);
+    animation: radial 3s infinite linear;
+    content: "";
+    display: block;
+    height: 10px;
+    width: 5px;
+}
+
+.spinner-type-59:after {
+    --color: var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR));
+    --base: 0;
+}
+
+.spinner-type-59:before {
+    --base: 180;
+    --color: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+}
+/*------------------------------------------------------------------*/
+.rainbow {
+    border-radius: 100%;
+    -webkit-clip-path: inset(0 0 50% 0);
+    clip-path: inset(0 0 50% 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    position: absolute;
+    width: 100px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -25%);
+}
+
+.spinner-type-60:after {
+    content: "";
+    height: 10px;
+    width: 10px;
+    position: absolute;
+    border-radius: 100%;
+    box-shadow: -40px -2px 0 1px #ffffff, -35px -6px 0 1px #ffffff, -30px -2px 0 1px #ffffff, -30px -8px 0 1px #ffffff, -25px -2px 0 1px #ffffff, -25px -8px 0 1px #ffffff, -20px -6px 0 1px #ffffff, -15px -2px 0 1px #ffffff, 40px -2px 0 1px #ffffff, 35px -6px 0 1px #ffffff, 30px -2px 0 1px #ffffff, 30px -8px 0 1px #ffffff, 25px -2px 0 1px #ffffff, 25px -8px 0 1px #ffffff, 20px -6px 0 1px #ffffff, 15px -2px 0 1px #ffffff;
+}
+
+.spinner-type-60:before {
+    content: "";
+    height: 80px;
+    width: 80px;
+    animation: spin 1.5s infinite;
+    border-radius: 100%;
+    box-shadow: 0 0 0 4px #f22613 inset, 0 0 0 8px #f89406 inset, 0 0 0 12px #f9bf3b inset, 0 0 0 16px #2ecc71 inset, 0 0 0 20px #19b5fe inset, 0 0 0 24px #663399 inset, 0 0 0 28px #bf55ec inset;
+    -webkit-clip-path: inset(0 0 50% 0);
+    clip-path: inset(0 0 50% 0);
+    overflow: hidden;
+    position: absolute;
+    top: -46px;
+    left: -34px;
+}
+/*------------------------------------------------------------------*/
+@keyframes rays {
+    from {
+        opacity: 1;
+        transform: scale(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: scale(1);
+    }
+}
+
+.spinner-type-61:after,
+.spinner-type-61:before {
+    border-radius: 100%;
+    content: "";
+    position: absolute;
+}
+
+.spinner-type-61:after {
+    animation: rays 1.5s infinite;
+    border: 10px solid var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    height: 100px;
+    width: 100px;
+    top: -40px;
+    left: -40px;
+}
+
+.spinner-type-61:before {
+    background: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    height: 20px;
+    width: 20px;
+}
+/*------------------------------------------------------------------*/
+@keyframes ringed {
+    to {
+        transform: rotate(360deg) translateY(-22px);
+    }
+}
+
+.spinner-type-62:after,
+.spinner-type-62:before {
+    border-radius: 100%;
+    content: "";
+    position: absolute;
+}
+
+.spinner-type-62:after {
+    animation: ringed 0.75s infinite linear both;
+    background: var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR));
+    height: 16px;
+    transform: rotate(0deg) translateY(-22px);
+    width: 16px;
+}
+
+.spinner-type-62:before {
+    border: 6px solid var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    height: 50px;
+    width: 50px;
+    top: -20px;
+    left: -20px;
+}
+/*------------------------------------------------------------------*/
+@keyframes rotary {
+    0% {
+        transform: rotate(0deg) translateX(150%) scale(1);
+    }
+
+    25% {
+        transform: rotate(90deg) translateX(150%) scale(0);
+    }
+
+    75% {
+        transform: rotate(270deg) translateX(150%) scale(1.5);
+    }
+
+    100% {
+        transform: rotate(360deg) translateX(150%) scale(1);
+    }
+}
+
+.spinner-type-63:before {
+    animation: rotary 1s infinite linear;
+    background-color: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    border-radius: 100%;
+    content: "";
+    display: block;
+    height: 25px;
+    width: 25px;
+}
+/*------------------------------------------------------------------*/
+@keyframes scale-dots-offset {
+    0% {
+        transform: translateX(-40px) scale(0);
+    }
+
+    10% {
+        transform: translateX(-40px) scale(1);
+    }
+
+    20% {
+        transform: translateX(-40px) scale(0);
+    }
+
+    30% {
+        transform: translateX(0) scale(0);
+    }
+
+    40% {
+        transform: translateX(0) scale(1);
+    }
+
+    50% {
+        transform: translateX(0) scale(0);
+    }
+
+    60% {
+        transform: translateX(40px) scale(0);
+    }
+
+    70% {
+        transform: translateX(40px) scale(1);
+    }
+
+    80%,
+    100% {
+        transform: translateX(40px) scale(0);
+    }
+}
+
+.spinner-type-64:before {
+    animation: scale-dots-offset 3s infinite;
+    background: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    border-radius: 100%;
+    content: "";
+    height: 30px;
+    width: 30px;
+}
+/*------------------------------------------------------------------*/
+@keyframes scale-dots {
+    0% {
+        transform: scale(0) translateX(-40px);
+    }
+
+    10% {
+        transform: scale(1) translateX(-40px);
+    }
+
+    20% {
+        transform: scale(0) translateX(-40px);
+    }
+
+    30% {
+        transform: scale(0) translateX(0);
+    }
+
+    40% {
+        transform: scale(1.25) translateX(0);
+    }
+
+    50% {
+        transform: scale(0) translateX(0);
+    }
+
+    60% {
+        transform: scale(0) translateX(40px);
+    }
+
+    70% {
+        transform: scale(1) translateX(40px);
+    }
+
+    80%,
+    100% {
+        transform: scale(0) translateX(40px);
+    }
+}
+
+.spinner-type-65:before {
+    animation: scale-dots 3s infinite;
+    background-color: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    border-radius: 100%;
+    content: "";
+    height: 30px;
+    width: 30px;
+}
+/*------------------------------------------------------------------*/
+@keyframes scan {
+    0% {
+        background-position: -5px 0;
+    }
+
+    50% {
+        background-position: 40px 0;
+    }
+
+    100% {
+        background-position: 40px 50px;
+    }
+}
+
+.spinner-type-66:before {
+    display: block;
+    animation: scan 1s infinite;
+    background: linear-gradient(90deg, var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)) 20%, transparent 20%, transparent), linear-gradient(0deg, var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)) 20%, transparent 20%, transparent);
+    background-size: 50px 50px;
+    border: 5px solid var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    content: "";
+    height: 50px;
+    transform: rotate(45deg);
+    width: 50px;
+}
+/*------------------------------------------------------------------*/
+.spinner-type-67:after,
+.spinner-type-67:before {
+    border: 6px solid var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    border-radius: 100%;
+    content: "";
+}
+
+.spinner-type-67:after {
+    animation: spin 1.5s infinite linear;
+    border-right-color: transparent;
+    height: 50px;
+    width: 50px;
+}
+
+.spinner-type-67:before {
+    animation: spin 0.75s infinite linear reverse;
+    border-left-color: transparent;
+    height: 25px;
+    width: 25px;
+    top: 12px;
+    left: 12px;
+    position: absolute;
+}
+/*------------------------------------------------------------------*/
+@keyframes side-to-side {
+    0% {
+        opacity: 0;
+        transform: translateX(-150%);
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(150%);
+    }
+}
+
+.spinner-type-68:before {
+    animation: side-to-side 0.5s infinite alternate ease-in-out;
+    background-color: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    border-radius: 100%;
+    content: "";
+    height: 30px;
+    width: 30px;
+}
+/*------------------------------------------------------------------*/
+@keyframes sliding-tile-bordered {
+    0% {
+        transform: translate(-50%, -50%) translate(-50%, -50%);
+    }
+
+    10% {
+        transform: translate(-50%, -50%) translate(50%, -50%);
+    }
+
+    20%,
+    80% {
+        transform: translate(-50%, -50%) translate(50%, 50%);
+    }
+
+    90% {
+        transform: translate(-50%, -50%) translate(-50%, 50%);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) translate(-50%, -50%);
+    }
+}
+
+@keyframes sliding-tile-bordered-2 {
+    0% {
+        transform: translate(-50%, -50%) translate(50%, 50%);
+    }
+
+    10% {
+        transform: translate(-50%, -50%) translate(-50%, 50%);
+    }
+
+    20%,
+    80% {
+        transform: translate(-50%, -50%) translate(-50%, -50%);
+    }
+
+    90% {
+        transform: translate(-50%, -50%) translate(50%, -50%);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) translate(50%, 50%);
+    }
+}
+
+@keyframes tile-rotate {
+
+    0%,
+    20% {
+        transform: perspective(50px) rotateY(0deg);
+    }
+
+    30%,
+    70% {
+        transform: perspective(50px) rotateY(180deg);
+    }
+
+    80%,
+    100% {
+        transform: perspective(50px) rotate(360deg);
+    }
+}
+
+.spinner-type-69 {
+    animation: tile-rotate 4s infinite linear;
+    border: 4px solid var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    height: 50px;
+    margin-left: -25px;
+    margin-top: -25px;
+    position: absolute;
+    width: 50px;
+}
+
+.spinner-type-69:after,
+.spinner-type-69:before {
+    animation: sliding-tile-bordered 2s infinite linear;
+    background-color: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 20px;
+    width: 20px;
+}
+
+.spinner-type-69:after {
+    animation: sliding-tile-bordered-2 2s infinite linear;
+}
+/*------------------------------------------------------------------*/
+@keyframes sliding-tile {
+    0% {
+        transform: translate(-50%, -50%) translate(-50%, -50%);
+    }
+
+    25% {
+        transform: translate(-50%, -50%) translate(50%, -50%);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) translate(50%, 50%);
+    }
+
+    75% {
+        transform: translate(-50%, -50%) translate(-50%, 50%);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) translate(-50%, -50%);
+    }
+}
+
+.spinner-type-70:after,
+.spinner-type-70:before {
+    animation: sliding-tile 1.25s infinite linear;
+    background-color: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 20px;
+    width: 20px;
+}
+
+.spinner-type-70:after {
+    animation: sliding-tile 1.25s -0.625s infinite linear;
+}
+/*------------------------------------------------------------------*/
+.spinner-type-71:after {
+    animation: snake 2s infinite both ease;
+    border-radius: 100%;
+    content: "";
+    height: 10px;
+    left: 50%;
+    margin-left: -32.5px;
+    margin-top: -5px;
+    position: absolute;
+    top: 50%;
+    width: 10px;
+}
+
+@keyframes snake {
+
+    0%,
+    5% {
+        box-shadow: 15px 15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px 15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px 15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px 0 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px -15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px -15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 15px -15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 15px 0 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px 0 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    }
+
+    10% {
+        box-shadow: 15px 15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px 15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px 15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px 0 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px -15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px -15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 15px -15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 15px 0 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px 0 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    }
+
+    15% {
+        box-shadow: 15px 15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px 15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px 15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px 0 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px -15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px -15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 15px -15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 15px 0 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px 0 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    }
+
+    20% {
+        box-shadow: 15px 15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px 15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px 15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px 0 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px -15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px -15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 15px -15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 15px 0 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px 0 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    }
+
+    25% {
+        box-shadow: 15px 15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px 15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px 15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px 0 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px -15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px -15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 15px -15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 15px 0 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px 0 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    }
+
+    30% {
+        box-shadow: 15px 15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px 15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px 15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px 0 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px -15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px -15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 15px -15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 15px 0 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px 0 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    }
+
+    35% {
+        box-shadow: 15px 15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px 15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px 15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px 0 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px -15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px -15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 15px -15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 15px 0 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px 0 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    }
+
+    40% {
+        box-shadow: 15px 15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px 15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px 15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px 0 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px -15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px -15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 15px -15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 15px 0 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px 0 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    }
+
+    45% {
+        box-shadow: 15px 15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px 15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px 15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px 0 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px -15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px -15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 15px -15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 15px 0 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px 0 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    }
+
+    50% {
+        box-shadow: 15px 15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px 15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px 15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px 0 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px -15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px -15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 15px -15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 15px 0 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px 0 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    }
+
+    55% {
+        box-shadow: 15px 15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px 15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px 15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px 0 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px -15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px -15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 15px -15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 15px 0 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px 0 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    }
+
+    60% {
+        box-shadow: 15px 15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px 15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px 15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px 0 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px -15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px -15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 15px -15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 15px 0 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px 0 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    }
+
+    65% {
+        box-shadow: 15px 15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px 15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px 15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px 0 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px -15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px -15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 15px -15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 15px 0 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px 0 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    }
+
+    70% {
+        box-shadow: 15px 15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px 15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px 15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px 0 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px -15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px -15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 15px -15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 15px 0 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px 0 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    }
+
+    75% {
+        box-shadow: 15px 15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px 15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px 15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px 0 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px -15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px -15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 15px -15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 15px 0 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px 0 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    }
+
+    80% {
+        box-shadow: 15px 15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px 15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px 15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px 0 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px -15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px -15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 15px -15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 15px 0 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px 0 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    }
+
+    85% {
+        box-shadow: 15px 15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px 15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px 15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px 0 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px -15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px -15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 15px -15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 15px 0 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px 0 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    }
+
+    90% {
+        box-shadow: 15px 15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px 15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px 15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px 0 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px -15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px -15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 15px -15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 15px 0 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px 0 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    }
+
+    95%,
+    100% {
+        box-shadow: 15px 15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px 15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px 15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px 0 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px -15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px -15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 15px -15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 15px 0 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px 0 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    }
+}
+/*------------------------------------------------------------------*/
+@keyframes spinning-coin-fall {
+    0% {
+        transform: translate(-50%, -50%) perspective(160px) rotateY(0deg) rotateX(0deg);
+    }
+
+    10% {
+        opacity: 1;
+        transform: translate(-50%, -50%) perspective(160px) rotateY(-65deg) rotateX(0deg);
+    }
+
+    70% {
+        opacity: 1;
+        transform: translate(-50%, -50%) perspective(160px) rotateY(1440deg) rotateX(0deg);
+    }
+
+    90%,
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) perspective(160px) rotateY(2880deg) rotateX(90deg);
+    }
+}
+
+.spinner-type-72:before {
+    animation: spinning-coin-fall 3s infinite;
+    background-color: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    border-radius: 100%;
+    content: "";
+    height: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    opacity: 0;
+    transform-origin: center;
+    width: 40px;
+}
+/*------------------------------------------------------------------*/
+@keyframes spinning-coin {
+    0% {
+        transform: perspective(160px) rotateY(0deg);
+    }
+
+    10% {
+        transform: perspective(160px) rotateY(-65deg);
+    }
+
+    90%,
+    100% {
+        transform: perspective(160px) rotateY(2880deg);
+    }
+}
+
+.spinner-type-73:before {
+    animation: spinning-coin 3s infinite;
+    border-radius: 100%;
+    background-color: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    transform-origin: center;
+    content: "";
+    height: 40px;
+    width: 40px;
+}
+/*------------------------------------------------------------------*/
+.spinner-type-74:after,
+.spinner-type-74:before {
+    border-radius: 100%;
+    content: "";
+    position: absolute;
+}
+
+.spinner-type-74:after {
+    animation: spin 1s infinite linear;
+    border: 10px solid var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    border-left-color: transparent;
+    border-right-color: transparent;
+    height: 50px;
+    width: 50px;
+}
+
+.spinner-type-74:before {
+    background: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    height: 14px;
+    width: 14px;
+}
+/*------------------------------------------------------------------*/
+.spinner-type-75:before {
+    animation: square-of-dots 1s infinite linear;
+    border-radius: 100%;
+    content: "";
+    height: 10px;
+    left: 50%;
+    margin-left: -47.5px;
+    margin-top: -5px;
+    position: absolute;
+    top: 50%;
+    width: 10px;
+}
+
+@keyframes square-of-dots {
+    0% {
+        box-shadow: 15px 0 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px 15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px -15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px 0 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px -30px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px -15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px 0 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px 15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px 30px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 60px 15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 60px 0 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 60px -15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 75px 0 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    }
+
+    10% {
+        box-shadow: 15px 0 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px 15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px -15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px 0 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px -30px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px -15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px 0 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px 15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px 30px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 60px 15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 60px 0 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 60px -15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 75px 0 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    }
+
+    20% {
+        box-shadow: 15px 0 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px 15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px -15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px 0 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px -30px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px -15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px 0 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px 15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px 30px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 60px 15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 60px 0 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 60px -15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 75px 0 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    }
+
+    30% {
+        box-shadow: 15px 0 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px 15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px -15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px 0 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px -30px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px -15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px 0 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px 15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px 30px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 60px 15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 60px 0 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 60px -15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 75px 0 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    }
+
+    40% {
+        box-shadow: 15px 0 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px 15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px -15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px 0 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px -30px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px -15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px 0 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px 15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px 30px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 60px 15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 60px 0 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 60px -15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 75px 0 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    }
+
+    50% {
+        box-shadow: 15px 0 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px 15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px -15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px 0 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px -30px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px -15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px 0 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px 15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px 30px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 60px 15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 60px 0 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 60px -15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 75px 0 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    }
+
+    60% {
+        box-shadow: 15px 0 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px 15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px -15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px 0 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px -30px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px -15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px 0 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px 15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px 30px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 60px 15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 60px 0 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 60px -15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 75px 0 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    }
+
+    70% {
+        box-shadow: 15px 0 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px 15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px -15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px 0 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px -30px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px -15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px 0 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px 15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px 30px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 60px 15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 60px 0 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 60px -15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 75px 0 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    }
+
+    80% {
+        box-shadow: 15px 0 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px 15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px -15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px 0 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px -30px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px -15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px 0 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px 15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px 30px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 60px 15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 60px 0 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 60px -15px 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 75px 0 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    }
+
+    90% {
+        box-shadow: 15px 0 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px 15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px -15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px 0 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px -30px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px -15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px 0 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px 15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px 30px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 60px 15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 60px 0 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 60px -15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 75px 0 0 0 var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    }
+
+    100% {
+        box-shadow: 15px 0 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px 15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px -15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 30px 0 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px -30px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px -15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px 0 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px 15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 45px 30px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 60px 15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 60px 0 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 60px -15px 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)), 75px 0 0 -10px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    }
+}
+/*------------------------------------------------------------------*/
+.spinner-type-76:before {
+    display: block;
+    animation: stop-and-go 1s infinite;
+    border: 25px solid var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    border-left-color: transparent;
+    border-radius: 100%;
+    border-right-color: transparent;
+    content: "";
+    height: 50px;
+    width: 50px;
+}
+@keyframes stop-and-go {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    60% {
+        transform: rotate(1440deg);
+    }
+
+    100% {
+        transform: rotate(1080deg);
+    }
+}
+/*------------------------------------------------------------------*/
+@keyframes swap {
+
+    0%,
+    100% {
+        transform: scale(0);
+    }
+
+    50% {
+        transform: scale(1);
+    }
+}
+.spinner-type-77 {
+    top: -25px;
+    left: -25px;
+}
+.spinner-type-77:after,
+.spinner-type-77:before {
+    border-radius: 100%;
+    content: "";
+    height: 50px;
+    opacity: 0.5;
+    position: absolute;
+    width: 50px;
+}
+
+.spinner-type-77:after {
+    animation: swap 1.5s -0.75s infinite;
+    background-color: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+}
+
+.spinner-type-77:before {
+    animation: swap 1.5s infinite;
+    background-color: var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR));
+}
+/*------------------------------------------------------------------*/
+@keyframes throw {
+    0% {
+        transform: scale(0.75) translateX(-250%);
+    }
+
+    50% {
+        transform: scale(1.5);
+    }
+
+    100% {
+        transform: scale(0.75) translateX(250%);
+    }
+}
+
+.spinner-type-78:before {
+    animation: throw 0.75s infinite alternate ease-in-out;
+    background-color: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    border-radius: 100%;
+    content: "";
+    height: 20px;
+    width: 20px;
+}
+/*------------------------------------------------------------------*/
+.spinner-type-79:before {
+    animation: spin 0.5s infinite linear;
+    border-radius: 100%;
+    box-shadow: inset -2px 0 0 0px var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    content: "";
+    height: 50px;
+    position: absolute;
+    width: 50px;
+}
+/*------------------------------------------------------------------*/
+@keyframes trigger {
+
+    0%,
+    100% {
+        box-shadow: -30px 30px 0 0 rgba(255, 255, 255, 0.5), -15px 30px 0 0 rgba(255, 255, 255, 0.5), 0 30px 0 0 rgba(255, 255, 255, 0.5), 15px 30px 0 0 rgba(255, 255, 255, 0.5), 30px 30px 0 0 rgba(255, 255, 255, 0.5);
+    }
+
+    30% {
+        box-shadow: -30px 30px 0 5px #fff, -15px 30px 0 0 rgba(255, 255, 255, 0.5), 0 30px 0 0 rgba(255, 255, 255, 0.5), 15px 30px 0 0 rgba(255, 255, 255, 0.5), 30px 30px 0 0 rgba(255, 255, 255, 0.5);
+    }
+
+    40% {
+        box-shadow: -30px 30px 0 0 rgba(255, 255, 255, 0.5), -15px 30px 0 5px #fff, 0 30px 0 0 rgba(255, 255, 255, 0.5), 15px 30px 0 0 rgba(255, 255, 255, 0.5), 30px 30px 0 0 rgba(255, 255, 255, 0.5);
+    }
+
+    50% {
+        box-shadow: -30px 30px 0 0 rgba(255, 255, 255, 0.5), -15px 30px 0 0 rgba(255, 255, 255, 0.5), 0 30px 0 5px #fff, 15px 30px 0 0 rgba(255, 255, 255, 0.5), 30px 30px 0 0 rgba(255, 255, 255, 0.5);
+    }
+
+    60% {
+        box-shadow: -30px 30px 0 0 rgba(255, 255, 255, 0.5), -15px 30px 0 0 rgba(255, 255, 255, 0.5), 0 30px 0 0 rgba(255, 255, 255, 0.5), 15px 30px 0 5px #fff, 30px 30px 0 0 rgba(255, 255, 255, 0.5);
+    }
+
+    70% {
+        box-shadow: -30px 30px 0 0 rgba(255, 255, 255, 0.5), -15px 30px 0 0 rgba(255, 255, 255, 0.5), 0 30px 0 0 rgba(255, 255, 255, 0.5), 15px 30px 0 0 rgba(255, 255, 255, 0.5), 30px 30px 0 5px #fff;
+    }
+
+    80% {
+        box-shadow: -30px 30px 0 0 rgba(255, 255, 255, 0.5), -15px 30px 0 0 rgba(255, 255, 255, 0.5), 0 30px 0 0 rgba(255, 255, 255, 0.5), 15px 30px 0 0 rgba(255, 255, 255, 0.5), 30px 30px 0 0 rgba(255, 255, 255, 0.5);
+    }
+}
+
+.spinner-type-80:before {
+    animation: trigger 1s infinite ease;
+    content: "";
+    height: 20px;
+    left: 50%;
+    margin-left: -5px;
+    margin-top: -40px;
+    position: absolute;
+    top: 50%;
+    width: 10px;
+}
+/*------------------------------------------------------------------*/
+@keyframes tumble {
+    0% {
+        transform: rotate(180deg) translateY(-17px);
+    }
+
+    100% {
+        transform: rotate(540deg) translateY(-17px);
+    }
+}
+
+.spinner-type-81:after,
+.spinner-type-81:before {
+    border-radius: 100%;
+    content: "";
+    position: absolute;
+}
+
+.spinner-type-81:after {
+    animation: tumble 1s infinite;
+    background-color: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    box-shadow: 8px 6px 0 0 var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR)), -8px 6px 0 0 var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR));
+    height: 16px;
+    width: 16px;
+}
+
+.spinner-type-81:before {
+    border: 6px solid var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    height: 50px;
+    width: 50px;
+    top: -15px;
+    left: -15px;
+}
+/*------------------------------------------------------------------*/
+@keyframes whirl {
+    0% {
+        transform: scale(0) rotate(-45deg) translateY(0);
+    }
+
+    50% {
+        transform: scale(1.25) rotate(960deg) translateY(100%);
+    }
+
+    100% {
+        transform: scale(0) rotate(2000deg) translateY(0);
+    }
+}
+
+.spinner-type-82:before {
+    animation: whirl 2s infinite linear;
+    background-color: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    border-radius: 100%;
+    content: "";
+    height: 30px;
+    width: 30px;
+}
+/*------------------------------------------------------------------*/
+@keyframes wind-up {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    10%,
+    15% {
+        transform: rotate(-90deg);
+    }
+
+    20%,
+    25% {
+        transform: rotate(-180deg);
+    }
+
+    30%,
+    35% {
+        transform: rotate(-270deg);
+    }
+
+    40%,
+    50% {
+        transform: rotate(-360deg);
+    }
+
+    100% {
+        transform: rotate(720deg);
+    }
+}
+
+.spinner-type-83:before {
+    animation: wind-up 3s infinite;
+    border: 6px solid var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
+    content: "";
+    display: block;
+    height: 50px;
+    width: 50px;
+}
+/*------------------------------------------------------------------*/
