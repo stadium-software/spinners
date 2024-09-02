@@ -2,7 +2,7 @@
 
 Spinners reduce the perceived waiting time for users. Use spinners to indicate to users that a page or element is busy processing. 
 
-https://github.com/user-attachments/assets/f8af2921-9c73-41ce-88ea-fe060e00c27c
+https://github.com/user-attachments/assets/949a57ab-05b7-4336-833a-dda00dc27546
 
 ## Version 
 
