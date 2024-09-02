@@ -1,8 +1,8 @@
 # Spinners
 
-Spinners reduce the perceived waiting time for medium- to long-running processes. Use spinners to indicate to users that a page or element is not accessible for a certain time
+Spinners reduce the perceived waiting time for users. Use spinners to indicate to users that a page or element is busy processing. 
 
-https://github.com/stadium-software/spinners/assets/2085324/e71eb0bb-21c6-4962-b3de-e703ca31aa84
+https://github.com/user-attachments/assets/f8af2921-9c73-41ce-88ea-fe060e00c27c
 
 ## Version 
 
