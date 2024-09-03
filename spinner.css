@@ -15,9 +15,9 @@
 
 .control-container:is(.stadium-spinner),
 .layout-control:is(.stadium-spinner) {
+    position: fixed;
     display: grid;
     place-items: center;
-    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -41,8 +41,9 @@ div[class^="spinner-type-"]:after {
     background-repeat: no-repeat;
     background-position: center;
     background-size: 40px;
-    height: 50px;
-    width: 50px;
+    width: var(--stadium-spinner-width, 48px);
+    height: var(--stadium-spinner-height, 48px);
+
 }
 .spinner-type-1 {
     width: var(--stadium-spinner-width, 48px);
@@ -777,6 +778,10 @@ div[class^="spinner-type-"]:after {
     }
 }
 /*------------------------------------------------------------------*/
+.spinner-type-21 {
+    width: var(--stadium-spinner-width, 48px);
+    height: var(--stadium-spinner-height, 48px);
+}
 .spinner-type-21:before {
     animation: scan 1s infinite;
     background: linear-gradient(90deg, var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)) 20%, transparent 20%, transparent), linear-gradient(0deg, var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR)) 20%, transparent 20%, transparent);
@@ -802,6 +807,10 @@ div[class^="spinner-type-"]:after {
     }
 }
 /*------------------------------------------------------------------*/
+.spinner-type-22 {
+    width: var(--stadium-spinner-width, 48px);
+    height: var(--stadium-spinner-height, 48px);
+}
 .spinner-type-22:before {
     animation: spin-22 0.5s infinite linear;
     border-radius: 100%;
@@ -836,6 +845,10 @@ div[class^="spinner-type-"]:after {
     margin-left: -5px;
 }
 /*------------------------------------------------------------------*/
+.spinner-type-24 {
+    width: var(--stadium-spinner-width, 48px);
+    height: var(--stadium-spinner-height, 48px);
+}
 .spinner-type-24:before {
     content: "";
     display: block;
@@ -1062,8 +1075,9 @@ div[class^="spinner-type-"]:after {
 /*------------------------------------------------------------------*/
 .spinner-type-31 {
     position: relative;
+    width: var(--stadium-spinner-width, 48px);
+    height: var(--stadium-spinner-height, 48px);
 }
-
 .spinner-type-31:after,
 .spinner-type-31:before {
     content: "";
@@ -1202,6 +1216,10 @@ div[class^="spinner-type-"]:after {
     }
 }
 /*------------------------------------------------------------------*/
+.spinner-type-36 {
+    width: var(--stadium-spinner-width, 48px);
+    height: var(--stadium-spinner-height, 48px);
+}
 .spinner-type-36:before {
     animation: dots-fade 2s infinite;
     background-color: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
@@ -1264,6 +1282,10 @@ div[class^="spinner-type-"]:after {
 }
 
 /*------------------------------------------------------------------*/
+.spinner-type-37 {
+    width: var(--stadium-spinner-width, 48px);
+    height: var(--stadium-spinner-height, 48px);
+}
 .spinner-type-37:before {
     animation: dots-flow 0.85s infinite ease;
     border-radius: 100%;
@@ -1296,6 +1318,10 @@ div[class^="spinner-type-"]:after {
     }
 }
 /*------------------------------------------------------------------*/
+.spinner-type-38 {
+    width: var(--stadium-spinner-width, 48px);
+    height: var(--stadium-spinner-height, 48px);
+}
 .spinner-type-38:before {
     display: block;
     height: 5px;
@@ -1312,6 +1338,10 @@ div[class^="spinner-type-"]:after {
     }
 }
 /*------------------------------------------------------------------*/
+.spinner-type-39 {
+    width: var(--stadium-spinner-width, 48px);
+    height: var(--stadium-spinner-height, 48px);
+}
 .spinner-type-39:after,
 .spinner-type-39:before {
     border-radius: 100%;
@@ -1335,6 +1365,10 @@ div[class^="spinner-type-"]:after {
     left: -15px;
 }
 /*------------------------------------------------------------------*/
+.spinner-type-40 {
+    width: var(--stadium-spinner-width, 48px);
+    height: var(--stadium-spinner-height, 48px);
+}
 .spinner-type-40:before {
     display: block;
     content: "";
@@ -1346,6 +1380,10 @@ div[class^="spinner-type-"]:after {
     border-radius: 100%;
 }
 /*------------------------------------------------------------------*/
+.spinner-type-41 {
+    width: var(--stadium-spinner-width, 48px);
+    height: var(--stadium-spinner-height, 48px);
+}
 .spinner-type-41:before {
     height: 50px;
     width: 50px;
@@ -1361,6 +1399,10 @@ div[class^="spinner-type-"]:after {
     border-right-color: var(--stadium-spinner-color1, var(--MAIN-THEME-COLOR));
 }
 /*------------------------------------------------------------------*/
+.spinner-type-42 {
+    width: var(--stadium-spinner-width, 48px);
+    height: var(--stadium-spinner-height, 48px);
+}
 .spinner-type-42:before {
     display: block;
     content: "";
@@ -1401,7 +1443,10 @@ div[class^="spinner-type-"]:after {
         transform: rotate(0deg);
     }
 }
-
+.spinner-type-43 {
+    width: var(--stadium-spinner-width, 48px);
+    height: var(--stadium-spinner-height, 48px);
+}
 .spinner-type-43:before {
     animation: eight 1.5s infinite ease;
     background-color: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
@@ -1436,7 +1481,10 @@ div[class^="spinner-type-"]:after {
         transform: skewY(0);
     }
 }
-
+.spinner-type-44 {
+    width: var(--stadium-spinner-width, 48px);
+    height: var(--stadium-spinner-height, 48px);
+}
 .spinner-type-44:before {
     animation: fidget 1s infinite ease;
     background-color: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
@@ -1454,7 +1502,6 @@ div[class^="spinner-type-"]:after {
     position: relative;
     width: 50px;
 }
-
 .spinner-type-45:before {
     animation: flip-square-travel 1s infinite;
     background-color: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
@@ -1493,6 +1540,10 @@ div[class^="spinner-type-"]:after {
     }
 }
 /*------------------------------------------------------------------*/
+.spinner-type-46 {
+    width: var(--stadium-spinner-width, 48px);
+    height: var(--stadium-spinner-height, 48px);
+}
 .spinner-type-46:before {
     animation: flip-square 1.5s infinite;
     background-color: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
@@ -1532,7 +1583,10 @@ div[class^="spinner-type-"]:after {
         transform: translateX(200%) scale(0);
     }
 }
-
+.spinner-type-47 {
+    width: var(--stadium-spinner-width, 48px);
+    height: var(--stadium-spinner-height, 48px);
+}
 .spinner-type-47:before {
     animation: fly-by 1s infinite ease;
     background-color: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
@@ -1543,6 +1597,10 @@ div[class^="spinner-type-"]:after {
     width: 40px;
 }
 /*------------------------------------------------------------------*/
+.spinner-type-48 {
+    width: var(--stadium-spinner-width, 48px);
+    height: var(--stadium-spinner-height, 48px);
+}
 .spinner-type-48:before {
     display: block;
     height: 5px;
@@ -1566,7 +1624,10 @@ div[class^="spinner-type-"]:after {
         transform: scale(1) rotate(2920deg) translateY(calc(var(--radius) * 1%));
     }
 }
-
+.spinner-type-49 {
+    width: var(--stadium-spinner-width, 48px);
+    height: var(--stadium-spinner-height, 48px);
+}
 .spinner-type-49:after,
 .spinner-type-49:before {
     --radius: 250;
@@ -1652,6 +1713,10 @@ div[class^="spinner-type-"]:after {
     transform: translateY(20px);
 }
 /*------------------------------------------------------------------*/
+.spinner-type-51 {
+    width: var(--stadium-spinner-width, 48px);
+    height: var(--stadium-spinner-height, 48px);
+}
 .spinner-type-51:before {
     animation: line-of-dots 1s infinite ease backwards;
     border-radius: 100%;
@@ -1822,6 +1887,10 @@ div[class^="spinner-type-"]:after {
     transform-origin: 200% 80%;
 }
 /*------------------------------------------------------------------*/
+.spinner-type-54 {
+    width: var(--stadium-spinner-width, 48px);
+    height: var(--stadium-spinner-height, 48px);
+}
 .spinner-type-54:before {
     animation: mexican-wave 0.75s infinite ease backwards;
     border-radius: 100%;
@@ -1878,7 +1947,10 @@ div[class^="spinner-type-"]:after {
         transform: scale(0) translateX(300%);
     }
 }
-
+.spinner-type-55 {
+    width: var(--stadium-spinner-width, 48px);
+    height: var(--stadium-spinner-height, 48px);
+}
 .spinner-type-55:before {
     animation: orbit 1s infinite;
     background-color: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
@@ -1915,7 +1987,10 @@ div[class^="spinner-type-"]:after {
         transform: translate(-100%, -100%);
     }
 }
-
+.spinner-type-56 {
+    width: var(--stadium-spinner-width, 48px);
+    height: var(--stadium-spinner-height, 48px);
+}
 .spinner-type-56:before {
     content: "";
     display: block;
@@ -1934,7 +2009,10 @@ div[class^="spinner-type-"]:after {
         transform: rotate(-50deg);
     }
 }
-
+.spinner-type-57 {
+    width: var(--stadium-spinner-width, 48px);
+    height: var(--stadium-spinner-height, 48px);
+}
 .spinner-type-57:after {
     background: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
     border-radius: 100%;
@@ -1977,7 +2055,10 @@ div[class^="spinner-type-"]:after {
         transform: rotate(360deg);
     }
 }
-
+.spinner-type-58 {
+    width: var(--stadium-spinner-width, 48px);
+    height: var(--stadium-spinner-height, 48px);
+}
 .spinner-type-58:before {
     content: "";
     height: 60px;
@@ -1999,7 +2080,10 @@ div[class^="spinner-type-"]:after {
         transform: rotate(calc((var(--base) + 1440) * 1deg)) translateY(150%);
     }
 }
-
+.spinner-type-59 {
+    width: var(--stadium-spinner-width, 48px);
+    height: var(--stadium-spinner-height, 48px);
+}
 .spinner-type-59:after,
 .spinner-type-59:before {
     background-color: var(--color);
@@ -2020,7 +2104,7 @@ div[class^="spinner-type-"]:after {
     --color: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
 }
 /*------------------------------------------------------------------*/
-.rainbow {
+.spinner-type-60 {
     border-radius: 100%;
     -webkit-clip-path: inset(0 0 50% 0);
     clip-path: inset(0 0 50% 0);
@@ -2030,9 +2114,6 @@ div[class^="spinner-type-"]:after {
     height: 100px;
     position: absolute;
     width: 100px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -25%);
 }
 
 .spinner-type-60:after {
@@ -2055,8 +2136,6 @@ div[class^="spinner-type-"]:after {
     clip-path: inset(0 0 50% 0);
     overflow: hidden;
     position: absolute;
-    top: -46px;
-    left: -34px;
 }
 /*------------------------------------------------------------------*/
 @keyframes rays {
@@ -2070,7 +2149,10 @@ div[class^="spinner-type-"]:after {
         transform: scale(1);
     }
 }
-
+.spinner-type-61 {
+    width: var(--stadium-spinner-width, 48px);
+    height: var(--stadium-spinner-height, 48px);
+}
 .spinner-type-61:after,
 .spinner-type-61:before {
     border-radius: 100%;
@@ -2098,7 +2180,10 @@ div[class^="spinner-type-"]:after {
         transform: rotate(360deg) translateY(-22px);
     }
 }
-
+.spinner-type-62 {
+    width: var(--stadium-spinner-width, 48px);
+    height: var(--stadium-spinner-height, 48px);
+}
 .spinner-type-62:after,
 .spinner-type-62:before {
     border-radius: 100%;
@@ -2139,7 +2224,10 @@ div[class^="spinner-type-"]:after {
         transform: rotate(360deg) translateX(150%) scale(1);
     }
 }
-
+.spinner-type-63 {
+    width: var(--stadium-spinner-width, 48px);
+    height: var(--stadium-spinner-height, 48px);
+}
 .spinner-type-63:before {
     animation: rotary 1s infinite linear;
     background-color: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
@@ -2188,7 +2276,10 @@ div[class^="spinner-type-"]:after {
         transform: translateX(40px) scale(0);
     }
 }
-
+.spinner-type-64 {
+    width: var(--stadium-spinner-width, 48px);
+    height: var(--stadium-spinner-height, 48px);
+}
 .spinner-type-64:before {
     animation: scale-dots-offset 3s infinite;
     background: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
@@ -2236,7 +2327,10 @@ div[class^="spinner-type-"]:after {
         transform: scale(0) translateX(40px);
     }
 }
-
+.spinner-type-65 {
+    width: var(--stadium-spinner-width, 48px);
+    height: var(--stadium-spinner-height, 48px);
+}
 .spinner-type-65:before {
     animation: scale-dots 3s infinite;
     background-color: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
@@ -2259,7 +2353,10 @@ div[class^="spinner-type-"]:after {
         background-position: 40px 50px;
     }
 }
-
+.spinner-type-66 {
+    width: var(--stadium-spinner-width, 48px);
+    height: var(--stadium-spinner-height, 48px);
+}
 .spinner-type-66:before {
     display: block;
     animation: scan 1s infinite;
@@ -2272,6 +2369,10 @@ div[class^="spinner-type-"]:after {
     width: 50px;
 }
 /*------------------------------------------------------------------*/
+.spinner-type-67 {
+    width: var(--stadium-spinner-width, 48px);
+    height: var(--stadium-spinner-height, 48px);
+}
 .spinner-type-67:after,
 .spinner-type-67:before {
     border: 6px solid var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
@@ -2311,7 +2412,10 @@ div[class^="spinner-type-"]:after {
         transform: translateX(150%);
     }
 }
-
+.spinner-type-68 {
+    width: var(--stadium-spinner-width, 48px);
+    height: var(--stadium-spinner-height, 48px);
+}
 .spinner-type-68:before {
     animation: side-to-side 0.5s infinite alternate ease-in-out;
     background-color: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
@@ -2432,7 +2536,10 @@ div[class^="spinner-type-"]:after {
         transform: translate(-50%, -50%) translate(-50%, -50%);
     }
 }
-
+.spinner-type-70 {
+    width: var(--stadium-spinner-width, 48px);
+    height: var(--stadium-spinner-height, 48px);
+}
 .spinner-type-70:after,
 .spinner-type-70:before {
     animation: sliding-tile 1.25s infinite linear;
@@ -2449,6 +2556,10 @@ div[class^="spinner-type-"]:after {
     animation: sliding-tile 1.25s -0.625s infinite linear;
 }
 /*------------------------------------------------------------------*/
+.spinner-type-71 {
+    width: var(--stadium-spinner-width, 48px);
+    height: var(--stadium-spinner-height, 48px);
+}
 .spinner-type-71:after {
     animation: snake 2s infinite both ease;
     border-radius: 100%;
@@ -2564,7 +2675,10 @@ div[class^="spinner-type-"]:after {
         transform: translate(-50%, -50%) perspective(160px) rotateY(2880deg) rotateX(90deg);
     }
 }
-
+.spinner-type-72 {
+    width: var(--stadium-spinner-width, 48px);
+    height: var(--stadium-spinner-height, 48px);
+}
 .spinner-type-72:before {
     animation: spinning-coin-fall 3s infinite;
     background-color: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
@@ -2593,7 +2707,10 @@ div[class^="spinner-type-"]:after {
         transform: perspective(160px) rotateY(2880deg);
     }
 }
-
+.spinner-type-73 {
+    width: var(--stadium-spinner-width, 48px);
+    height: var(--stadium-spinner-height, 48px);
+}
 .spinner-type-73:before {
     animation: spinning-coin 3s infinite;
     border-radius: 100%;
@@ -2604,6 +2721,10 @@ div[class^="spinner-type-"]:after {
     width: 40px;
 }
 /*------------------------------------------------------------------*/
+.spinner-type-74 {
+    width: var(--stadium-spinner-width, 48px);
+    height: var(--stadium-spinner-height, 48px);
+}
 .spinner-type-74:after,
 .spinner-type-74:before {
     border-radius: 100%;
@@ -2626,6 +2747,10 @@ div[class^="spinner-type-"]:after {
     width: 14px;
 }
 /*------------------------------------------------------------------*/
+.spinner-type-75 {
+    width: var(--stadium-spinner-width, 48px);
+    height: var(--stadium-spinner-height, 48px);
+}
 .spinner-type-75:before {
     animation: square-of-dots 1s infinite linear;
     border-radius: 100%;
@@ -2685,6 +2810,10 @@ div[class^="spinner-type-"]:after {
     }
 }
 /*------------------------------------------------------------------*/
+.spinner-type-76 {
+    width: var(--stadium-spinner-width, 48px);
+    height: var(--stadium-spinner-height, 48px);
+}
 .spinner-type-76:before {
     display: block;
     animation: stop-and-go 1s infinite;
@@ -2722,6 +2851,8 @@ div[class^="spinner-type-"]:after {
     }
 }
 .spinner-type-77 {
+    width: var(--stadium-spinner-width, 48px);
+    height: var(--stadium-spinner-height, 48px);
     top: -25px;
     left: -25px;
 }
@@ -2758,7 +2889,10 @@ div[class^="spinner-type-"]:after {
         transform: scale(0.75) translateX(250%);
     }
 }
-
+.spinner-type-78 {
+    width: var(--stadium-spinner-width, 48px);
+    height: var(--stadium-spinner-height, 48px);
+}
 .spinner-type-78:before {
     animation: throw 0.75s infinite alternate ease-in-out;
     background-color: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
@@ -2768,6 +2902,10 @@ div[class^="spinner-type-"]:after {
     width: 20px;
 }
 /*------------------------------------------------------------------*/
+.spinner-type-79 {
+    width: var(--stadium-spinner-width, 48px);
+    height: var(--stadium-spinner-height, 48px);
+}
 .spinner-type-79:before {
     animation: spin 0.5s infinite linear;
     border-radius: 100%;
@@ -2809,7 +2947,10 @@ div[class^="spinner-type-"]:after {
         box-shadow: -30px 30px 0 0 rgba(255, 255, 255, 0.5), -15px 30px 0 0 rgba(255, 255, 255, 0.5), 0 30px 0 0 rgba(255, 255, 255, 0.5), 15px 30px 0 0 rgba(255, 255, 255, 0.5), 30px 30px 0 0 rgba(255, 255, 255, 0.5);
     }
 }
-
+.spinner-type-80 {
+    width: var(--stadium-spinner-width, 48px);
+    height: var(--stadium-spinner-height, 48px);
+}
 .spinner-type-80:before {
     animation: trigger 1s infinite ease;
     content: "";
@@ -2831,7 +2972,10 @@ div[class^="spinner-type-"]:after {
         transform: rotate(540deg) translateY(-17px);
     }
 }
-
+.spinner-type-81 {
+    width: var(--stadium-spinner-width, 48px);
+    height: var(--stadium-spinner-height, 48px);
+}
 .spinner-type-81:after,
 .spinner-type-81:before {
     border-radius: 100%;
@@ -2868,7 +3012,10 @@ div[class^="spinner-type-"]:after {
         transform: scale(0) rotate(2000deg) translateY(0);
     }
 }
-
+.spinner-type-82 {
+    width: var(--stadium-spinner-width, 48px);
+    height: var(--stadium-spinner-height, 48px);
+}
 .spinner-type-82:before {
     animation: whirl 2s infinite linear;
     background-color: var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
@@ -2907,7 +3054,10 @@ div[class^="spinner-type-"]:after {
         transform: rotate(720deg);
     }
 }
-
+.spinner-type-83 {
+    width: var(--stadium-spinner-width, 48px);
+    height: var(--stadium-spinner-height, 48px);
+}
 .spinner-type-83:before {
     animation: wind-up 3s infinite;
     border: 6px solid var(--stadium-spinner-color3, var(--CONTRAST-THEME-COLOR));
