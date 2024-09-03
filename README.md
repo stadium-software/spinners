@@ -74,7 +74,7 @@ initSpinners();
 ![](images/Contained-Spinner-Result.gif)
 
 ### Spinner Types
-1. Add "spinner-type-1" to the "SpinnerContainer" classes property to select a specific spinner (append number from 1 to 83)
+1. Add "spinner-type-1" (or any number between 1 and 83) to the "SpinnerContainer" classes property to select a specific spinner
 2. Add "spinner-type-random" to the "SpinnerContainer" classes property to let the script select a random spinner
 3. Add "spinner-type-custom" to the "SpinnerContainer" classes property and the CSS below to your stylesheet to define your own spinner from an animated background image (see below)
 
