@@ -12,6 +12,8 @@ https://github.com/user-attachments/assets/949a57ab-05b7-4336-833a-dda00dc27546
 
 1.1.1 Added even more spinners (script and CSS)
 
+1.1.2 Added custom spinner option (CSS only)
+
 # Setup
 
 ## Application Setup
@@ -22,7 +24,7 @@ https://github.com/user-attachments/assets/949a57ab-05b7-4336-833a-dda00dc27546
 3. Drag a *JavaScript* action into the script
 4. Add the Javascript below into the JavaScript code property
 ```javascript
-/* Stadium Script Version 1.1.1 */
+/* Stadium Script Version 1.1.2 */
 let initSpinners = () => {
     let spinners = document.querySelectorAll(".stadium-spinner");
     let spinnerCount = 83;
@@ -46,22 +48,24 @@ let initSpinners = () => {
 initSpinners();
 ```
 
-## Page Setup: Full-Page Spinner
+## Spinner Display
+
+### Page Setup: Full-Page Spinner
 1. Drag a *Container* control to a page 
 2. Add the class "stadium-spinner" to the control's classes property
-3. Add the class "spinner-type-1" to the control's classes property (or any other number from 1 to 83, e.g. spinner-type-71)
+3. Add a class to define the spinner type to the control's classes property (see below)
 4. Set the *Container* *Visibility* property to "false" to hide the spinner
 5. Set the *Container* *Visibility* property to "true" to show the spinner
 
-## Page Setup: Contained Spinner
+### Page Setup: Contained Spinner
 1. Drag a *Container* control to a page
 2. Drag any other control into the *Container* control
-3. Drag another *Container* control into the first *Container* control (I will call this one "SpinnerContainer")
-4. Add the class "stadium-spinner" to the SpinnerContainer's classes property
-5. Add the class "spinner-contained" to the SpinnerContainer's classes property
-6. Add the class "spinner-type-1" to the SpinnerContainer's classes property (or any other number from 1 to 83, e.g. spinner-type-64)
-7. Set the *Container* *Visibility* property to "false" to hide the spinner
-8. Set the *Container* *Visibility* property to "true" to show the spinner
+3. Drag another *Container* control into the first *Container* control (e.g. "SpinnerContainer")
+4. Add a class to define the spinner type to the control's classes property (see below)
+5. Set the *Container* *Visibility* property to "false" to hide the spinner
+6. Set the *Container* *Visibility* property to "true" to show the spinner
+
+**Contained Spinner**
 
 Setup:
 
@@ -70,6 +74,28 @@ Setup:
 Result:
 
 ![](images/Contained-Spinner-Result.gif)
+
+### Spinner Types
+1. "spinner-type-1": to select a specific spinner from 1 to 83
+2. "spinner-type-custom": to define your own spinner from an animated background image
+3. "spinner-type-random": to let the script select a random spinner
+
+**Custom Spinner Selection**
+
+1. Find a spinner here https://icones.js.org/collection/svg-spinners
+2. Set the color (e.g. #ffffff)
+3. Copy the Data URL option
+4. Paste the value into the "url" property in the css below
+5. Add the CSS below to the stylesheet of your application
+
+**Example Custom Spinner CSS**
+```css
+.spinner-type-custom {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 24 24'%3E%3Cg%3E%3Ccircle cx='12' cy='3' r='1' fill='%23ffffff'%3E%3Canimate id='svgSpinners12DotsScaleRotate0' attributeName='r' begin='0;svgSpinners12DotsScaleRotate2.end-0.5s' calcMode='spline' dur='0.6s' keySplines='.27,.42,.37,.99;.53,0,.61,.73' values='1;2;1'/%3E%3C/circle%3E%3Ccircle cx='16.5' cy='4.21' r='1' fill='%23ffffff'%3E%3Canimate id='svgSpinners12DotsScaleRotate1' attributeName='r' begin='svgSpinners12DotsScaleRotate0.begin+0.1s' calcMode='spline' dur='0.6s' keySplines='.27,.42,.37,.99;.53,0,.61,.73' values='1;2;1'/%3E%3C/circle%3E%3Ccircle cx='7.5' cy='4.21' r='1' fill='%23ffffff'%3E%3Canimate id='svgSpinners12DotsScaleRotate2' attributeName='r' begin='svgSpinners12DotsScaleRotate4.begin+0.1s' calcMode='spline' dur='0.6s' keySplines='.27,.42,.37,.99;.53,0,.61,.73' values='1;2;1'/%3E%3C/circle%3E%3Ccircle cx='19.79' cy='7.5' r='1' fill='%23ffffff'%3E%3Canimate id='svgSpinners12DotsScaleRotate3' attributeName='r' begin='svgSpinners12DotsScaleRotate1.begin+0.1s' calcMode='spline' dur='0.6s' keySplines='.27,.42,.37,.99;.53,0,.61,.73' values='1;2;1'/%3E%3C/circle%3E%3Ccircle cx='4.21' cy='7.5' r='1' fill='%23ffffff'%3E%3Canimate id='svgSpinners12DotsScaleRotate4' attributeName='r' begin='svgSpinners12DotsScaleRotate6.begin+0.1s' calcMode='spline' dur='0.6s' keySplines='.27,.42,.37,.99;.53,0,.61,.73' values='1;2;1'/%3E%3C/circle%3E%3Ccircle cx='21' cy='12' r='1' fill='%23ffffff'%3E%3Canimate id='svgSpinners12DotsScaleRotate5' attributeName='r' begin='svgSpinners12DotsScaleRotate3.begin+0.1s' calcMode='spline' dur='0.6s' keySplines='.27,.42,.37,.99;.53,0,.61,.73' values='1;2;1'/%3E%3C/circle%3E%3Ccircle cx='3' cy='12' r='1' fill='%23ffffff'%3E%3Canimate id='svgSpinners12DotsScaleRotate6' attributeName='r' begin='svgSpinners12DotsScaleRotate8.begin+0.1s' calcMode='spline' dur='0.6s' keySplines='.27,.42,.37,.99;.53,0,.61,.73' values='1;2;1'/%3E%3C/circle%3E%3Ccircle cx='19.79' cy='16.5' r='1' fill='%23ffffff'%3E%3Canimate id='svgSpinners12DotsScaleRotate7' attributeName='r' begin='svgSpinners12DotsScaleRotate5.begin+0.1s' calcMode='spline' dur='0.6s' keySplines='.27,.42,.37,.99;.53,0,.61,.73' values='1;2;1'/%3E%3C/circle%3E%3Ccircle cx='4.21' cy='16.5' r='1' fill='%23ffffff'%3E%3Canimate id='svgSpinners12DotsScaleRotate8' attributeName='r' begin='svgSpinners12DotsScaleRotatea.begin+0.1s' calcMode='spline' dur='0.6s' keySplines='.27,.42,.37,.99;.53,0,.61,.73' values='1;2;1'/%3E%3C/circle%3E%3Ccircle cx='16.5' cy='19.79' r='1' fill='%23ffffff'%3E%3Canimate id='svgSpinners12DotsScaleRotate9' attributeName='r' begin='svgSpinners12DotsScaleRotate7.begin+0.1s' calcMode='spline' dur='0.6s' keySplines='.27,.42,.37,.99;.53,0,.61,.73' values='1;2;1'/%3E%3C/circle%3E%3Ccircle cx='7.5' cy='19.79' r='1' fill='%23ffffff'%3E%3Canimate id='svgSpinners12DotsScaleRotatea' attributeName='r' begin='svgSpinners12DotsScaleRotateb.begin+0.1s' calcMode='spline' dur='0.6s' keySplines='.27,.42,.37,.99;.53,0,.61,.73' values='1;2;1'/%3E%3C/circle%3E%3Ccircle cx='12' cy='21' r='1' fill='%23ffffff'%3E%3Canimate id='svgSpinners12DotsScaleRotateb' attributeName='r' begin='svgSpinners12DotsScaleRotate9.begin+0.1s' calcMode='spline' dur='0.6s' keySplines='.27,.42,.37,.99;.53,0,.61,.73' values='1;2;1'/%3E%3C/circle%3E%3CanimateTransform attributeName='transform' dur='6s' repeatCount='indefinite' type='rotate' values='360 12 12;0 12 12'/%3E%3C/g%3E%3C/svg%3E");
+}
+```
+
+![](images/CustomSpinnerSelect.gif)
 
 ## Page.Load Setup
 1. Drag the Global Script called "Spinner" to the Page.Load event handler

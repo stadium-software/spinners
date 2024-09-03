@@ -37,6 +37,13 @@ div[class^="spinner-type-"]:after {
 }
 
 /*---SPINNERS---------------------------------------------------------------*/
+.spinner-type-custom {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 40px;
+    height: 50px;
+    width: 50px;
+}
 .spinner-type-1 {
     width: var(--stadium-spinner-width, 48px);
     height: var(--stadium-spinner-height, 48px);
