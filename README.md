@@ -76,7 +76,7 @@ initSpinners();
 ### Spinner Types
 1. Add "spinner-type-1" (or any number between 1 and 83) to the "SpinnerContainer" classes property to select a specific spinner
 2. Add "spinner-type-random" to the "SpinnerContainer" classes property to let the script select a random spinner
-3. Add "spinner-type-custom" to the "SpinnerContainer" classes property and the CSS below to your stylesheet to define your own spinner from an animated background image (see below)
+3. Add "spinner-type-custom" to the "SpinnerContainer" classes property and CSS to your stylesheet to define your own spinner from an animated background image (see below)
 
 **Example Custom Spinner CSS**
 ```css
@@ -90,7 +90,7 @@ initSpinners();
 2. Set the color (e.g. #ffffff)
 3. Copy the Data URL option
 4. Paste the value into the "url" property in the css below
-5. Add the CSS below to the stylesheet of your application
+5. Add the ".spinner-type-custom" style to the stylesheet of your application
 
 ![](images/CustomSpinnerSelect.gif)
 
