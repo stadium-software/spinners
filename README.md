@@ -54,8 +54,8 @@ initSpinners();
 1. Drag a *Container* control to a page and call it "SpinnerContainer"
 2. Add the class "stadium-spinner" to the control's classes property
 3. Add a class to define the spinner type to the control's classes property (see below)
-4. Set the *Container* *Visibility* property to "false" to hide the spinner
-5. Set the *Container* *Visibility* property to "true" to show the spinner
+4. Set the "SpinnerContainer" *Visibility* property to "false" to hide the spinner
+5. Set the "SpinnerContainer"*Visibility* property to "true" to show the spinner
 
 ### Contained Spinner Page Setup
 1. Drag a *Container* control to a page
