@@ -59,11 +59,11 @@ initSpinners();
 
 ### Contained Spinner Page Setup
 1. Drag a *Container* control to a page
-2. Drag any other control into the *Container* control
-3. Drag another *Container* control into the first *Container* control (e.g. "SpinnerContainer")
-4. Add a class to define the spinner type to the control's classes property (see below)
-5. Set the *Container* *Visibility* property to "false" to hide the spinner
-6. Set the *Container* *Visibility* property to "true" to show the spinner
+2. Drag the control the spinner should cover into the *Container* control
+3. Drag another *Container* control into the first *Container* control and call it "SpinnerContainer"
+4. Add a class to the "SpinnerContainer" classes property to define the spinner type (see below)
+5. Set the "SpinnerContainer" *Visibility* property to "false" to hide the spinner
+6. Set the "SpinnerContainer"*Visibility* property to "true" to show the spinner
 
 **Contained Spinner Setup**
 
@@ -74,9 +74,9 @@ initSpinners();
 ![](images/Contained-Spinner-Result.gif)
 
 ### Spinner Types
-1. "spinner-type-1": to select a specific spinner from 1 to 83
-2. "spinner-type-custom": to define your own spinner from an animated background image
-3. "spinner-type-random": to let the script select a random spinner
+1. Add "spinner-type-1" to the Spinner *Container* classes property to select a specific spinner (append number from 1 to 83)
+2. Add "spinner-type-random" to the Spinner *Container* classes property to let the script select a random spinner
+3. Add "spinner-type-custom" to the Spinner *Container* classes property to define your own spinner from an animated background image (see below)
 
 **Custom Spinner Selection**
 
