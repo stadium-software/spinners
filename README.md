@@ -14,6 +14,8 @@ https://github.com/user-attachments/assets/949a57ab-05b7-4336-833a-dda00dc27546
 
 1.1.2 Added custom spinner option (CSS only)
 
+1.1.3 Added even more spinners (CSS only)
+
 # Setup
 
 ## Application Setup
@@ -24,10 +26,10 @@ https://github.com/user-attachments/assets/949a57ab-05b7-4336-833a-dda00dc27546
 3. Drag a *JavaScript* action into the script
 4. Add the Javascript below into the JavaScript code property
 ```javascript
-/* Stadium Script Version 1.1.2 */
+/* Stadium Script Version 1.1.3 */
 let initSpinners = () => {
     let spinners = document.querySelectorAll(".stadium-spinner");
-    let spinnerCount = 83;
+    let spinnerCount = 114;
     for (let i = 0; i < spinners.length; i++) {
         let arrClasses = spinners[i].getAttribute("class").split(" ");
         let className = arrClasses.find((cl) => cl.startsWith("spinner-type-"));
@@ -74,7 +76,7 @@ initSpinners();
 ![](images/Contained-Spinner-Result.gif)
 
 ### Spinner Types
-1. Add "spinner-type-1" (or any number between 1 and 83) to the "SpinnerContainer" classes property to select a specific spinner
+1. Add "spinner-type-1" (or any number between 1 and 114) to the "SpinnerContainer" classes property to select a specific spinner
 2. Add "spinner-type-random" to the "SpinnerContainer" classes property to let the script select a random spinner
 3. Add "spinner-type-custom" to the "SpinnerContainer" classes property and CSS to your stylesheet to define your own spinner from an animated background image (see below)
 
