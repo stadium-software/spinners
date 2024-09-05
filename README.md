@@ -29,7 +29,7 @@ Spinners reduce the perceived waiting time for users. Use spinners to indicate t
 /* Stadium Script Version 1.1.3 */
 let initSpinners = () => {
     let spinners = document.querySelectorAll(".stadium-spinner");
-    let spinnerCount = 114;
+    let spinnerCount = 115;
     for (let i = 0; i < spinners.length; i++) {
         let arrClasses = spinners[i].getAttribute("class").split(" ");
         let className = arrClasses.find((cl) => cl.startsWith("spinner-type-"));
