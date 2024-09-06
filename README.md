@@ -1,6 +1,8 @@
 # Spinners
 
-Spinners reduce the perceived waiting time for users. Use spinners to indicate to users that a page or element is busy processing. 
+Spinners reduce the perceived waiting time for users. Use spinners to indicate to users that a page element is busy processing. 
+
+Use the [Page Loader](https://github.com/stadium-software/page-loader) repo to customise the standard Stadium data loading indicator. 
 
 ![](images/SpinnerOptions.gif)
 
