@@ -7,20 +7,18 @@ Use the [Page Loader](https://github.com/stadium-software/page-loader) repo to c
 ![](images/SpinnerOptions.gif)
 
 ## Version 
-
-1.0 Initial
-
-1.1 Added more spinners (script and CSS)
-
-1.1.1 Added even more spinners (script and CSS)
-
-1.1.2 Added custom spinner option (CSS only)
-
-1.1.3 Added even more spinners (CSS only)
-
 1.2 Integrated CSS into script; Added default spinner
 
 # Setup
+
+## Overview
+1. Add the [Global Script](#globalscriptsetup)
+2. Add a [Container Control](#spinnerdisplay) to the page 
+3. Add the 'stadium-spinner' class to the Container `classes` property
+4. Set the Container `visibility` property to `false`
+5. Drag the [Global Script](#globalscriptsetup) into an [Event Handler](#event-handler-setup)
+6. To **show** the spinner, set the Container `visibility` property to `true`
+7. To **hide** the spinner, set the Container `visibility` property to `false`
 
 ## Application Setup
 1. Check the *Enable Style Sheet* checkbox in the application properties
